@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AW Solutions - Jasa Pengetikan & Desain</title>
-    <!-- Import Font Elegan dari Google Fonts -->
+    <title>AW Solutions - Professional Design & Service</title>
+    <!-- Import Font Modern & Elegan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* STYLE UMUM */
+        /* DEFINISI WARNA UTAMA */
         :root {
-            --gold: #D4AF37;
-            --dark: #1a1a1a;
-            --light: #f8f9fa;
+            --black: #000000;
+            --dark: #111111;
+            --gray: #2c2c2c;
+            --light-gray: #e0e0e0;
+            --orange: #ff8c00; /* Warna Oranye seperti contoh */
+            --orange-light: #ffb347;
         }
 
         * {
@@ -24,175 +27,301 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--gray);
+            color: #fff;
+            line-height: 1.6;
         }
 
-        /* STYLE HEADER */
-        .header {
-            background: linear-gradient(135deg, #000000 0%, var(--dark) 100%);
-            color: var(--gold);
-            padding: 25px 20px;
+        /* ===================================== */
+        /* STYLE NAVBAR / MENU DI ATAS */
+        /* ===================================== */
+        .navbar {
+            background: var(--black);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .search-box {
+            background: #222;
+            border: 1px solid #444;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+        }
+
+        /* ===================================== */
+        /* STYLE HEADER / SLIDER BESAR */
+        /* ===================================== */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background laptop.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efek Cahaya/Sinar seperti contoh */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255,140,0,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-bottom: 2px solid var(--gold);
+            z-index: 2;
         }
 
-        .header img {
-            height: 110px;
-            width: auto;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        .hero-content img.logo-main {
+            height: 120px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255,140,0,0.5));
         }
 
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2em;
-            font-weight: 700;
-            letter-spacing: 8px;
+        .hero-content h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3.5em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(255,140,0,0.5);
+        }
+
+        /* ===================================== */
+        /* STYLE BAGIAN WELCOME & LAYANAN */
+        /* ===================================== */
+        .welcome-section {
+            background: #f5f5f5;
+            color: #333;
+            padding: 40px 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .welcome-text h2 {
+            color: var(--orange);
+            font-size: 1.5em;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
-        /* STYLE BACKGROUND LAPTOP */
-        .banner-bg {
-            width: 100%;
-            height: auto;
-            display: block;
+        .what-we-do {
+            background: #eaeaea;
+            padding: 20px;
+            border-radius: 5px;
         }
 
-        /* STYLE BANNER IMAGE */
-        .banner-img {
-            width: 90%;
-            max-width: 900px;
-            height: auto;
-            display: block;
-            margin: 30px auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        /* STYLE KONTEN / TULISAN */
-        .content {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--gold);
-        }
-
-        .content h3 {
-            text-align: center;
-            font-size: 2em;
-            color: var(--dark);
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .content .slogan {
-            text-align: center;
-            font-size: 1.3em;
-            color: #555;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .content h4 {
-            font-size: 1.4em;
-            color: var(--dark);
-            margin: 25px 0 15px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .content ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .content ul li {
-            font-size: 1.1em;
-            padding: 10px 0;
-            border-bottom: 1px dashed #f0f0f0;
+        .what-we-do h3 {
+            color: var(--orange);
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .content ul li::before {
-            content: "✓";
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 1.5em;
-            margin-right: 15px;
-        }
-
-        .antar {
-            text-align: center;
-            margin-top: 25px;
-            font-style: italic;
-            color: #666;
-            font-size: 1.1em;
-        }
-
-        /* STYLE JUDUL PORTFOLIO */
-        h2 {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
-            color: var(--dark);
-            margin: 50px 0 20px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--gold);
-            margin: 10px auto;
-        }
-
-        /* STYLE GALERI */
-        .gallery {
+        /* ===================================== */
+        /* STYLE FITUR DALAM KOTAK HITAM */
+        /* ===================================== */
+        .features-section {
+            background: var(--black);
+            padding: 50px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            padding: 20px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 25px;
+            border: 1px solid #333;
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            border-color: var(--orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,140,0,0.2);
+        }
+
+        .feature-box .icon {
+            font-size: 2.5em;
+            color: var(--orange);
+            margin-bottom: 15px;
+        }
+
+        .feature-box h4 {
+            color: var(--orange-light);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .feature-box p {
+            color: #bbb;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .btn-more {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-more:hover {
+            background: #e67e00;
+        }
+
+        /* ===================================== */
+        /* STYLE JUDUL PORTFOLIO */
+        /* ===================================== */
+        .portfolio-title {
+            text-align: center;
+            padding: 40px 0 10px;
+            background: var(--gray);
+        }
+
+        .portfolio-title h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .portfolio-title h2 span {
+            color: var(--orange);
+        }
+
+        /* ===================================== */
+        /* STYLE GALERI FOTO */
+        /* ===================================== */
+        .gallery {
+            padding: 30px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background: var(--gray);
         }
 
         .gallery-item {
-            cursor: pointer;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
+            border: 3px solid #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--orange);
+            box-shadow: 0 0 20px rgba(255,140,0,0.3);
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
+        /* ===================================== */
+        /* STYLE FOOTER / KONTAK */
+        /* ===================================== */
+        .footer {
+            background: var(--black);
+            padding: 40px 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            border-top: 2px solid var(--orange);
+            margin-top: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--orange);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #ccc;
+            font-size: 0.9em;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .footer-col a:hover {
+            color: var(--orange);
+        }
+
+        .wa-button {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white !important;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .copyright {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.8em;
+        }
+
+        /* ===================================== */
         /* STYLE LIGHTBOX */
+        /* ===================================== */
         .lightbox {
             display: none;
             position: fixed;
@@ -200,187 +329,144 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0,0,0,0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
-            padding: 20px;
         }
 
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            object-fit: contain;
-            border: 5px solid var(--gold);
+            border: 3px solid var(--orange);
             border-radius: 5px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
         }
 
         .close-btn {
             position: absolute;
-            top: 25px;
-            right: 35px;
+            top: 30px;
+            right: 40px;
             color: white;
-            font-size: 50px;
-            font-weight: bold;
+            font-size: 40px;
             cursor: pointer;
             transition: color 0.3s;
         }
 
         .close-btn:hover {
-            color: var(--gold);
+            color: var(--orange);
         }
 
-        /* STYLE FOOTER / KONTAK */
-        .footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-top: 3px solid var(--gold);
-        }
-
-        .footer p {
-            font-size: 1.3em;
-            margin: 8px 0;
-        }
-
-        .footer .name {
-            font-size: 1.6em;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .wa-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2em;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .wa-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .copyright {
-            margin-top: 25px;
-            font-size: 0.9em !important;
-            color: #aaa;
+        /* ===================================== */
+        /* RESPONSIVE */
+        /* ===================================== */
+        @media (max-width: 768px) {
+            .welcome-section, .features-section, .footer {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- BAGIAN ATAS: LOGO DAN NAMA -->
-    <div class="header">
-        <img src="AW SOLUTIONS Lo..png" alt="Logo AW Solutions">
-        <h1>AW SOLUTIONS</h1>
-    </div>
-
-    <!-- BACKGROUND LAPTOP -->
-    <img class="banner-bg" src="Background laptop.jpg" alt="Background AW Solutions">
-
-    <!-- BANNER 1 DAN 2 -->
-    <img class="banner-img" src="Banner 01.jpg" alt="Banner 1">
-    <img class="banner-img" src="Banner 02.jpg" alt="Banner 2">
-
-    <!-- BAGIAN TULISAN LAYANAN -->
-    <div class="content">
-        <h3>PENGETIKAN & DESAIN</h3>
-        <p class="slogan">Kami siap membantu!</p>
-
-        <h4>MENERIMA :</h4>
-        <ul>
-            <li>PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</li>
-            <li>PRINT OUT (HITAM, PUTIH DAN WARNA)</li>
-            <li>DESAIN DAN CETAK MAJALAH</li>
-            <li>DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</li>
-        </ul>
-
-        <h4>KEUNGGULAN KAMI :</h4>
-        <ul>
-            <li>CEPAT SELESAI</li>
-            <li>PEKERJAAN RAPI</li>
-            <li>HARGA BERSAHABAT</li>
-            <li>BERKUALITAS</li>
-            <li>PEMBAYARAN MUDAH</li>
-        </ul>
-
-        <p class="antar">(Siap Antar Hasil)</p>
-    </div>
-
-    <!-- JUDUL PORTFOLIO -->
-    <h2>PORTFOLIO KAMI</h2>
-
-    <!-- ISI GALERI GAMBAR -->
-    <div class="gallery">
-        <div class="gallery-item" onclick="openLightbox('Majalah 01.jpg')">
-            <img src="Majalah 01.jpg" alt="Desain AW Solutions">
+    <!-- ===================================== -->
+    <!-- MENU NAVIGASI -->
+    <!-- ===================================== -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Layanan</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Kontak</a>
         </div>
-        <div class="gallery-item" onclick="openLightbox('Majalah 02.jpg')">
-            <img src="Majalah 02.jpg" alt="Desain AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Majalah 03.jpg')">
-            <img src="Majalah 03.jpg" alt="Desain AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Majalah 04.jpg')">
-            <img src="Majalah 04.jpg" alt="Desain AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Majalah 05.jpg')">
-            <img src="Majalah 05.jpg" alt="Desain AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Spanduk nama sta...jpg')">
-            <img src="Spanduk nama sta...jpg" alt="Spanduk AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Backdrop 01.jpg')">
-            <img src="Backdrop 01.jpg" alt="Backdrop AW Solutions">
-        </div>
-        <div class="gallery-item" onclick="openLightbox('Backdrop 02.jpg')">
-            <img src="Backdrop 02.jpg" alt="Backdrop AW Solutions">
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
         </div>
     </div>
 
-    <!-- LIGHTBOX -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-btn">&times;</span>
-        <img id="lightbox-img" src="">
+    <!-- ===================================== -->
+    <!-- BAGIAN HERO / BACKGROUND LAPTOP -->
+    <!-- ===================================== -->
+    <div class="hero">
+        <div class="hero-content">
+            <img src="AW SOLUTIONS Lo..png" alt="Logo AW Solutions" class="logo-main">
+            <h1>AW SOLUTIONS</h1>
+        </div>
     </div>
 
-    <!-- BAGIAN BAWAH: KONTAK -->
-    <div class="footer">
-        <p class="name">HUBUNGI : ALDI</p>
-        <p>📞 0821 8766 2626</p>
-        <p>📞 0822 5329 5313</p>
-        
-        <a class="wa-button" href="https://wa.me/6282187662626" target="_blank">
-            💬 CHAT VIA WHATSAPP
-        </a>
-        
-        <p class="copyright">© 2025 AW Solutions - Professional Design & Service</p>
+    <!-- ===================================== -->
+    <!-- BAGIAN WELCOME & LAYANAN -->
+    <!-- ===================================== -->
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h2>Welcome to our website</h2>
+            <p><strong>PENGETIKAN & DESAIN</strong></p>
+            <p style="font-size: 1.2em; color: #000; margin: 10px 0;">Kami siap membantu!</p>
+            
+            <h3 style="margin-top: 20px; color: #333;">MENERIMA :</h3>
+            <p>✅ PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</p>
+            <p>✅ PRINT OUT (HITAM, PUTIH DAN WARNA)</p>
+            <p>✅ DESAIN DAN CETAK MAJALAH</p>
+            <p>✅ DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</p>
+        </div>
+
+        <div class="what-we-do">
+            <h3>
+                <span>👤</span> What we do
+            </h3>
+            <h4 style="color: var(--orange); margin-bottom: 10px;">KEUNGGULAN KAMI :</h4>
+            <p>✅ CEPAT SELESAI</p>
+            <p>✅ PEKERJAAN RAPI</p>
+            <p>✅ HARGA BERSAHABAT</p>
+            <p>✅ BERKUALITAS</p>
+            <p>✅ PEMBAYARAN MUDAH</p>
+            <p style="margin-top: 15px; font-style: italic;">(Siap Antar Hasil)</p>
+        </div>
     </div>
 
-    <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox').style.display = 'flex';
-            document.getElementById('lightbox-img').src = src;
-            document.body.style.overflow = 'hidden';
-        }
+    <!-- ===================================== -->
+    <!-- BAGIAN FITUR DALAM KOTAK -->
+    <!-- ===================================== -->
+    <div class="features-section">
+        <div class="feature-box">
+            <div class="icon">📝</div>
+            <h4>Pengetikan</h4>
+            <p>Pengerjaan laporan, makalah, dan dokumen lainnya dengan cepat dan rapi.</p>
+            <button class="btn-more">Read More</button>
+        </div>
 
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    </script>
+        <div class="feature-box">
+            <div class="icon">🖨️</div>
+            <h4>Print & Copy</h4>
+            <p>Jasa cetak hitam putih maupun berwarna dengan kualitas terbaik.</p>
+            <button class="btn-more">Read More</button>
+        </div>
 
-</body>
-</html>
+        <div class="feature-box">
+            <div class="icon">🎨</div>
+            <h4>Desain Grafis</h4>
+            <p>Pembuatan desain majalah, banner, spanduk, backdrop, dan kebutuhan lainnya.</p>
+            <button class="btn-more">Read More</button>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">🌐</div>
+            <h4>Layanan Luas</h4>
+            <p>Kami melayani berbagai kebutuhan percetakan dan desain untuk berbagai kalangan.</p>
+            <button class="btn-more">Read More</button>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">💻</div>
+            <h4>Peralatan Modern</h4>
+            <p>Menggunakan mesin dan software terkini agar hasil maksimal.</p>
+            <button class="btn-more">Read More</button>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">🚚</div>
+            <h4>Pengiriman Cepat</h4>
+           
