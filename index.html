@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AW Solutions - Professional Design & Service</title>
-    <!-- Import Font Modern & Elegan -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* DEFINISI WARNA UTAMA */
         :root {
             --black: #000000;
             --dark: #111111;
             --gray: #2c2c2c;
             --light-gray: #e0e0e0;
-            --orange: #ff8c00; /* Warna Oranye seperti contoh */
+            --orange: #ff8c00;
             --orange-light: #ffb347;
         }
 
@@ -24,6 +22,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -34,28 +33,43 @@
         }
 
         /* ===================================== */
-        /* STYLE NAVBAR / MENU DI ATAS */
+        /* STYLE NAVBAR / MENU */
         /* ===================================== */
         .navbar {
             background: var(--black);
-            padding: 15px 50px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 8px;
         }
 
         .nav-links a {
             color: #ddd;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             text-transform: uppercase;
-            transition: color 0.3s;
+            padding: 5px 8px;
+            border-radius: 3px;
+            transition: all 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--orange);
+        .nav-links a:hover, .nav-links a:active {
+            color: white;
+            background: var(--orange);
         }
 
         .search-box {
@@ -63,6 +77,8 @@
             border: 1px solid #444;
             padding: 5px 10px;
             border-radius: 3px;
+            display: flex;
+            align-items: center;
         }
 
         .search-box input {
@@ -70,24 +86,25 @@
             border: none;
             color: #fff;
             outline: none;
+            width: 80px;
         }
 
         /* ===================================== */
-        /* STYLE HEADER / SLIDER BESAR */
+        /* STYLE HEADER / SLIDER */
         /* ===================================== */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background laptop.jpg');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            min-height: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding: 20px;
         }
 
-        /* Efek Cahaya/Sinar seperti contoh */
         .hero::before {
             content: '';
             position: absolute;
@@ -105,17 +122,17 @@
         }
 
         .hero-content img.logo-main {
-            height: 120px;
-            margin-bottom: 15px;
+            height: 90px;
+            margin-bottom: 10px;
             filter: drop-shadow(0 0 15px rgba(255,140,0,0.5));
         }
 
         .hero-content h1 {
             font-family: 'Raleway', sans-serif;
-            font-size: 3.5em;
+            font-size: 2.5em;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             text-shadow: 0 0 20px rgba(255,140,0,0.5);
         }
 
@@ -125,92 +142,99 @@
         .welcome-section {
             background: #f5f5f5;
             color: #333;
-            padding: 40px 50px;
+            padding: 25px 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: start;
+            grid-template-columns: 1fr; /* Ubah jadi 1 kolom agar simetris di HP */
+            gap: 25px;
         }
 
         .welcome-text h2 {
             color: var(--orange);
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-bottom: 15px;
             text-transform: uppercase;
+            text-align: center;
+        }
+
+        .welcome-text p {
+            font-size: 1em;
+            margin: 8px 0;
+            padding-left: 10px;
         }
 
         .what-we-do {
             background: #eaeaea;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
         }
 
         .what-we-do h3 {
             color: var(--orange);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .what-we-do p {
+            font-size: 1em;
+            margin: 8px 0;
+            padding-left: 10px;
         }
 
         /* ===================================== */
-        /* STYLE FITUR DALAM KOTAK HITAM */
+        /* STYLE FITUR DALAM KOTAK */
         /* ===================================== */
         .features-section {
             background: var(--black);
-            padding: 50px;
+            padding: 30px 15px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom agar rapi di HP */
+            gap: 20px;
         }
 
         .feature-box {
             text-align: center;
-            padding: 25px;
+            padding: 20px 15px;
             border: 1px solid #333;
             background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
-        .feature-box:hover {
+        .feature-box:active {
+            transform: scale(0.98);
             border-color: var(--orange);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255,140,0,0.2);
         }
 
         .feature-box .icon {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: var(--orange);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .feature-box h4 {
             color: var(--orange-light);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .feature-box p {
             color: #bbb;
-            font-size: 0.85em;
-            margin-bottom: 15px;
+            font-size: 0.8em;
+            margin-bottom: 12px;
         }
 
         .btn-more {
             background: var(--orange);
             color: white;
             border: none;
-            padding: 8px 20px;
-            border-radius: 3px;
+            padding: 6px 15px;
+            border-radius: 20px;
             text-transform: uppercase;
-            font-size: 0.8em;
+            font-size: 0.75em;
             cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-more:hover {
-            background: #e67e00;
         }
 
         /* ===================================== */
@@ -218,16 +242,16 @@
         /* ===================================== */
         .portfolio-title {
             text-align: center;
-            padding: 40px 0 10px;
+            padding: 30px 0 10px;
             background: var(--gray);
         }
 
         .portfolio-title h2 {
             font-family: 'Raleway', sans-serif;
-            font-size: 2.5em;
+            font-size: 2em;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
         .portfolio-title h2 span {
@@ -238,35 +262,30 @@
         /* STYLE GALERI FOTO */
         /* ===================================== */
         .gallery {
-            padding: 30px 50px;
+            padding: 20px 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom simetris di HP */
+            gap: 15px;
             background: var(--gray);
         }
 
         .gallery-item {
             overflow: hidden;
             border: 3px solid #333;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
-        .gallery-item:hover {
+        .gallery-item:active {
             border-color: var(--orange);
-            box-shadow: 0 0 20px rgba(255,140,0,0.3);
+            transform: scale(0.98);
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
         }
 
         /* ===================================== */
@@ -274,47 +293,45 @@
         /* ===================================== */
         .footer {
             background: var(--black);
-            padding: 40px 50px;
+            padding: 30px 20px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            border-top: 2px solid var(--orange);
+            grid-template-columns: 1fr; /* 1 kolom penuh di HP */
+            gap: 25px;
+            border-top: 3px solid var(--orange);
             margin-top: 30px;
+            text-align: center;
         }
 
         .footer-col h4 {
             color: var(--orange);
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 1.1em;
         }
 
-        .footer-col p, .footer-col a {
+        .footer-col p {
             color: #ccc;
-            font-size: 0.9em;
-            text-decoration: none;
-            display: block;
+            font-size: 1em;
             margin: 5px 0;
         }
 
-        .footer-col a:hover {
-            color: var(--orange);
-        }
-
         .wa-button {
+            display: inline-block;
             background: linear-gradient(45deg, #25D366, #128C7E);
             color: white !important;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1em;
             margin-top: 15px;
-            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .copyright {
             background: #0a0a0a;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             color: #666;
             font-size: 0.8em;
         }
@@ -333,10 +350,11 @@
             z-index: 9999;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .lightbox img {
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90%;
             border: 3px solid var(--orange);
             border-radius: 5px;
@@ -344,29 +362,15 @@
 
         .close-btn {
             position: absolute;
-            top: 30px;
-            right: 40px;
+            top: 20px;
+            right: 25px;
             color: white;
             font-size: 40px;
             cursor: pointer;
-            transition: color 0.3s;
         }
 
         .close-btn:hover {
             color: var(--orange);
-        }
-
-        /* ===================================== */
-        /* RESPONSIVE */
-        /* ===================================== */
-        @media (max-width: 768px) {
-            .welcome-section, .features-section, .footer {
-                grid-template-columns: 1fr;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
         }
     </style>
 </head>
@@ -388,9 +392,9 @@
     </div>
 
     <!-- ===================================== -->
-    <!-- BAGIAN HERO / BACKGROUND LAPTOP -->
+    <!-- BAGIAN HERO / HOME -->
     <!-- ===================================== -->
-    <div class="hero">
+    <div class="hero" id="home">
         <div class="hero-content">
             <img src="AW SOLUTIONS Lo..png" alt="Logo AW Solutions" class="logo-main">
             <h1>AW SOLUTIONS</h1>
@@ -398,15 +402,15 @@
     </div>
 
     <!-- ===================================== -->
-    <!-- BAGIAN WELCOME & LAYANAN -->
+    <!-- BAGIAN LAYANAN -->
     <!-- ===================================== -->
-    <div class="welcome-section">
+    <div class="welcome-section" id="services">
         <div class="welcome-text">
             <h2>Welcome to our website</h2>
             <p><strong>PENGETIKAN & DESAIN</strong></p>
-            <p style="font-size: 1.2em; color: #000; margin: 10px 0;">Kami siap membantu!</p>
+            <p style="font-size: 1.1em; color: #000; font-weight: bold;">Kami siap membantu!</p>
             
-            <h3 style="margin-top: 20px; color: #333;">MENERIMA :</h3>
+            <h3 style="margin-top: 20px; color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px;">MENERIMA :</h3>
             <p>✅ PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</p>
             <p>✅ PRINT OUT (HITAM, PUTIH DAN WARNA)</p>
             <p>✅ DESAIN DAN CETAK MAJALAH</p>
@@ -414,59 +418,53 @@
         </div>
 
         <div class="what-we-do">
-            <h3>
-                <span>👤</span> What we do
-            </h3>
-            <h4 style="color: var(--orange); margin-bottom: 10px;">KEUNGGULAN KAMI :</h4>
+            <h3>KEUNGGULAN KAMI</h3>
             <p>✅ CEPAT SELESAI</p>
             <p>✅ PEKERJAAN RAPI</p>
             <p>✅ HARGA BERSAHABAT</p>
             <p>✅ BERKUALITAS</p>
             <p>✅ PEMBAYARAN MUDAH</p>
-            <p style="margin-top: 15px; font-style: italic;">(Siap Antar Hasil)</p>
+            <p style="margin-top: 15px; font-style: italic; text-align: center;">(Siap Antar Hasil)</p>
         </div>
     </div>
 
     <!-- ===================================== -->
-    <!-- BAGIAN FITUR DALAM KOTAK -->
+    <!-- BAGIAN FITUR -->
     <!-- ===================================== -->
     <div class="features-section">
         <div class="feature-box">
             <div class="icon">📝</div>
             <h4>Pengetikan</h4>
-            <p>Pengerjaan laporan, makalah, dan dokumen lainnya dengan cepat dan rapi.</p>
-            <button class="btn-more">Read More</button>
+            <p>Laporan, Makalah, Dokumen</p>
+            <button class="btn-more">Detail</button>
         </div>
 
         <div class="feature-box">
             <div class="icon">🖨️</div>
             <h4>Print & Copy</h4>
-            <p>Jasa cetak hitam putih maupun berwarna dengan kualitas terbaik.</p>
-            <button class="btn-more">Read More</button>
+            <p>Hitam Putih & Berwarna</p>
+            <button class="btn-more">Detail</button>
         </div>
 
         <div class="feature-box">
             <div class="icon">🎨</div>
             <h4>Desain Grafis</h4>
-            <p>Pembuatan desain majalah, banner, spanduk, backdrop, dan kebutuhan lainnya.</p>
-            <button class="btn-more">Read More</button>
+            <p>Majalah, Banner, Spanduk</p>
+            <button class="btn-more">Detail</button>
         </div>
 
         <div class="feature-box">
             <div class="icon">🌐</div>
             <h4>Layanan Luas</h4>
-            <p>Kami melayani berbagai kebutuhan percetakan dan desain untuk berbagai kalangan.</p>
-            <button class="btn-more">Read More</button>
+            <p>Melayani Segala Kalangan</p>
+            <button class="btn-more">Detail</button>
         </div>
 
         <div class="feature-box">
             <div class="icon">💻</div>
             <h4>Peralatan Modern</h4>
-            <p>Menggunakan mesin dan software terkini agar hasil maksimal.</p>
-            <button class="btn-more">Read More</button>
+            <p>Mesin & Software Terkini</p>
+            <button class="btn-more">Detail</button>
         </div>
 
-        <div class="feature-box">
-            <div class="icon">🚚</div>
-            <h4>Pengiriman Cepat</h4>
-           
+        <div class="feature-box
