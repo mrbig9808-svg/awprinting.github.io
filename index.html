@@ -48,24 +48,24 @@
         }
 
         .nav-links {
-            display: flex;
-            gap: 30px; /* Jarak antar menu diperlebar */
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dibagi 2 kolom sama besar */
+            gap: 10px 40px; /* Jarak antar menu */
             justify-content: center;
-            width: 100%;
+            text-align: center;
         }
 
         .nav-links a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.2em;
             text-transform: uppercase;
             padding: 8px 15px;
             border-radius: 3px;
             transition: all 0.3s;
-            letter-spacing: 2px;
-            text-align: center; /* 🔥 RATA TENGAH SEMUA MENU */
+            letter-spacing: 3px;
             display: block;
+            width: 100%;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -117,7 +117,7 @@
         /* ===================================== */
         .content-section {
             display: none;
-            padding: 120px 15px 30px; /* 🔥 JARAK ATAS DIPERBESAR AGAR JELAS */
+            padding: 140px 15px 30px; /* Jarak atas aman */
             background: var(--dark);
             min-height: 100vh;
         }
@@ -137,8 +137,7 @@
         /* ===================================== */
         .section-title {
             text-align: center;
-            margin-bottom: 40px; /* 🔥 JARAK KE BAWAH DIPERBESAR */
-            margin-top: 20px; /* 🔥 JARAK DARI ATAS */
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
@@ -256,9 +255,6 @@
                 font-size: 2.2em;
                 letter-spacing: 3px;
             }
-            .nav-links {
-                gap: 15px;
-            }
             .nav-links a {
                 font-size: 1em;
                 padding: 5px 10px;
@@ -283,7 +279,7 @@
     <!-- ===================================== -->
     <!-- HALAMAN UTAMA / HOME -->
     <!-- ===================================== -->
-    <div class="hero" id="home-section">
+    <div class="hero"id="home-section">
         <div class="hero-content">
             <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions" class="logo-main">
             <h1>AW <span>SOLUTIONS</span></h1>
