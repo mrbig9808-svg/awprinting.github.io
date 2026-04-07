@@ -188,13 +188,14 @@
             font-size: 1em;
             margin: 12px 0;
             line-height: 1.8;
+            text-align: left;
         }
 
         /* --- STYLE PORTOFOLIO --- */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -204,16 +205,22 @@
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
         }
 
         .gallery-item:hover {
             border-color: var(--orange);
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .gallery-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -232,6 +239,7 @@
             font-size: 1.2em;
             margin: 15px 0;
             color: #ddd;
+            text-align: center;
         }
 
         .wa-button {
@@ -259,6 +267,10 @@
             .nav-links a {
                 font-size: 1em;
                 padding: 5px 10px;
+            }
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
             }
         }
     </style>
