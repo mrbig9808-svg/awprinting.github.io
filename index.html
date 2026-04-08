@@ -98,26 +98,35 @@
             width: 100%;
             max-width: 100%;
             padding: 0 15px;
+            /* REVISI: Turunkan ke bawah */
+            margin-top: 15vh; /* Sesuaikan angka ini untuk menaikkan/menurunkan */
         }
 
         /* ===================================== */
-        /* LOGO BULAT */
+        /* LOGO BULAT - REVISI UKURAN & EFEK GRADASI */
         /* ===================================== */
         .logo-circle {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 20px;
-            border: 3px solid var(--gold);
+            width: 100px; /* Lebih kecil dari 130px */
+            height: 100px; /* Lebih kecil dari 130px */
+            margin: 0 auto 15px; /* Margin lebih kecil */
+            border: 2px solid var(--gold); /* Border lebih tipis */
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #000000;
+            /* Efek gradasi halus di luar lingkaran */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* Gradasi emas */
+            transition: all 0.3s ease;
+        }
+
+        .logo-circle:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
         }
 
         .logo-circle .big-letters {
-            font-size: 3.5em;
+            font-size: 3em; /* Disesuaikan dengan ukuran lingkaran */
             font-weight: 700;
             color: #ffffff;
             font-family: 'Playfair Display', serif;
@@ -125,27 +134,28 @@
         }
 
         .logo-circle .small-text {
-            font-size: 0.65em;
+            font-size: 0.6em; /* Disesuaikan */
             color: var(--gold);
             letter-spacing: 2px;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
+            font-size: 2.2em; /* Sedikit lebih kecil */
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 3px; /* Jarak huruf lebih rapat */
             line-height: 1.2;
+            margin-top: 15px; /* REVISI: Turunkan */
         }
 
         .hero-content h1 .aw-text { color: white; }
         .hero-content h1 .solutions-text { color: var(--gold); }
 
         .hero-subtitle {
-            font-size: 1.2em;
+            font-size: 1.1em; /* Sedikit lebih kecil */
             color: #f0f0f0;
-            margin-top: 10px;
+            margin-top: 8px; /* REVISI: Turunkan */
         }
 
         /* ===================================== */
@@ -178,16 +188,17 @@
         }
 
         /* ===================================== */
-        /* STYLE ISI KONTEN / ARTIKEL */
+        /* STYLE ISI KONTEN / ARTIKEL (Halaman Layanan) - REVISI */
         /* ===================================== */
         .article-content {
-            max-width: 800px;
+            max-width: 900px; /* Lebih lebar */
             margin: 0 auto;
             background: rgba(255,255,255,0.05);
             padding: 30px;
             border-radius: 10px;
             border: 1px solid #444;
             line-height: 1.8;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Tambah bayangan */
         }
 
         .article-content p {
@@ -195,18 +206,59 @@
             color: #ddd;
         }
 
+        .section-heading-orange {
+            text-align: center;
+            color: var(--orange);
+            margin-bottom: 25px; /* Sedikit lebih besar */
+            font-size: 1.8em; /* Ukuran lebih besar */
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 149, 0, 0.3);
+        }
+
+        .keunggulan {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* Jarak antar item */
+            justify-content: center;
+            margin: 25px 0; /* Margin lebih besar */
+        }
+
+        .item {
+            background: rgba(255, 149, 0, 0.15); /* Warna lebih pekat */
+            padding: 12px 20px; /* Padding lebih besar */
+            border-radius: 30px;
+            border: 1px solid var(--orange);
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .item:hover {
+            background: var(--orange);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.4);
+        }
+
         .service-box {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
+            background: rgba(255,255,255,0.07); /* Sedikit lebih terang */
+            padding: 25px; /* Padding lebih besar */
             border-radius: 10px;
-            border: 1px solid #444;
-            margin: 15px 0;
+            border: 1px solid #555; /* Border lebih tebal */
+            margin: 20px 0; /* Margin lebih besar */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            text-align: left; /* Teks rata kiri */
         }
 
         .service-box h3 {
-            color: var(--orange);
-            margin-bottom: 10px;
-            font-size: 1.3em;
+            color: var(--gold); /* Judul service-box jadi emas */
+            margin-bottom: 15px; /* Jarak lebih besar */
+            font-size: 1.4em; /* Ukuran lebih besar */
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
         }
 
         .service-box ul {
@@ -215,71 +267,99 @@
         }
 
         .service-box ul li {
-            padding: 5px 0;
+            padding: 8px 0; /* Padding lebih besar */
             color: #eee;
+            font-size: 1em;
+            line-height: 1.5;
         }
 
         .service-box ul li::before {
-            content: "✅ ";
+            content: "✨ "; /* Ganti ✅ dengan ✨ */
+            color: var(--orange); /* Warna ikon */
+            margin-right: 5px;
         }
 
-        .keunggulan {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px 0;
+        .how-to-order ol {
+            list-style-type: decimal; /* Nomor urut */
+            padding-left: 25px;
+            margin-top: 15px;
         }
-
-        .item {
-            background: rgba(255, 149, 0, 0.1);
-            padding: 10px 15px;
-            border-radius: 30px;
-            border: 1px solid var(--orange);
+        .how-to-order ol li {
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+        .how-to-order ol li strong {
+            color: var(--gold);
         }
 
         /* ===================================== */
-        /* STYLE GALERI / PORTOFOLIO */
+        /* STYLE GALERI / PORTOFOLIO - REVISI */
         /* ===================================== */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
             gap: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .gallery-item {
-            border: 2px solid #333;
+            border: 2px solid var(--gold); /* Border emas */
             border-radius: 8px;
             overflow: hidden;
-            aspect-ratio: 4/5;
+            aspect-ratio: 1/1; /* Jadi kotak */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Tambah bayangan */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block; /* Menghilangkan spasi bawah pada gambar */
         }
 
         /* ===================================== */
-        /* STYLE KONTAK & WHATSAPP */
+        /* STYLE KONTAK & WHATSAPP - REVISI */
         /* ===================================== */
         .contact-info {
             text-align: center;
             max-width: 500px;
             margin: 0 auto;
             background: rgba(255,255,255,0.05);
-            padding: 35px 25px;
+            padding: 40px 30px; /* Padding lebih besar */
             border-radius: 10px;
             border: 1px solid #444;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Tambah bayangan */
+        }
+
+        .contact-info h3 {
+            color: var(--orange);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         .contact-info p {
-            font-size: 1.2em;
+            font-size: 1.3em; /* Ukuran font lebih besar */
             margin: 15px 0;
             color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
+
+        .contact-info p::before {
+            content: '📞'; /* Icon telepon */
+            color: var(--gold);
+        }
+
 
         .wa-button {
             display: block;
@@ -289,13 +369,16 @@
             border-radius: 30px;
             text-decoration: none !important;
             font-weight: 600;
-            margin-top: 15px;
+            margin-top: 20px; /* Margin lebih besar */
             transition: all 0.3s;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
         }
 
         .wa-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+            background: linear-gradient(45deg, #128C7E, #25D366); /* Ganti arah gradasi saat hover */
         }
     </style>
 </head>
@@ -335,7 +418,7 @@
         <div class="article-content">
 
             <!-- BAGIAN DIKLAT (PALING ATAS) -->
-            <h2 style="text-align:center; color: var(--orange); margin-bottom:20px;">🔹 JASA TUGAS DIKLAT 🔹</h2>
+            <h2 class="section-heading-orange">🔹 JASA TUGAS DIKLAT 🔹</h2>
 
             <p>Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
 
@@ -377,13 +460,11 @@
                 </ul>
             </div>
 
-            <hr style="margin: 30px 0; border-color: #333; border-width:2px;">
+            <hr style="margin: 30px auto; border-color: #333; border-width:2px; max-width: 80%;">
 
             <!-- BAGIAN LAMA (DI BAWAH) -->
-            <div class="service-box">
-                <h3>PENGETIKAN & DESAIN</h3>
-                <p style="text-align:center; font-size:1.2em;">🤝 Kami siap membantu!</p>
-            </div>
+            <h2 class="section-heading-orange">🔹 PENGETIKAN & DESAIN 🔹</h2>
+            <p style="text-align:center; font-size:1.2em; color:#fff;">🤝 Kami siap membantu!</p>
 
             <div class="service-box">
                 <h3>MENERIMA JASA :</h3>
@@ -407,15 +488,17 @@
                 <p style="text-align:center; margin-top:15px;">🚗 (Siap Antar Hasil)</p>
             </div>
 
-            <hr style="margin: 20px 0; border-color: #333;">
+            <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
 
-            <h3 style="text-align:center; color: var(--orange); margin-top:20px;">📞 Cara Pemesanan</h3>
-            <ol>
-                <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
-                <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
-                <li><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
-                <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
-            </ol>
+            <div class="how-to-order">
+                <h3 style="text-align:center; color: var(--orange); margin-top:20px; font-size: 1.6em;">📞 Cara Pemesanan</h3>
+                <ol>
+                    <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
+                    <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
+                    <li><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
+                    <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
+                </ol>
+            </div>
 
         </div>
     </div>
@@ -435,7 +518,7 @@
             <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
             <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
             <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
-            <div class="gallery-item"><img src="Spanduk.jpg" alt="Spanduk"></div>
+            <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div> <!-- NAMA FILE SPANDUK SUDAH DIUPDATE -->
         </div>
     </div>
 
@@ -479,14 +562,27 @@
             document.getElementById(sectionId + '-section').style.display = 'block';
             
             // 4. Beri warna emas pada menu yang diklik
-            event.target.classList.add('active');
+            // Event.target hanya tersedia jika fungsi dipanggil oleh event listener
+            // Untuk memastikan ini jalan, kita bisa mencari link berdasarkan sectionId
+            var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
+            if (clickedLink) {
+                clickedLink.classList.add('active');
+            }
         }
         
-        // Saat pertama dibuka, pastikan Home yang tampil
+        // Saat pertama dibuka, pastikan Home yang tampil dan menunya aktif
         window.onload = function() {
-            showSection('home');
+            // Tampilkan Home Section
+            document.getElementById('home-section').style.display = 'block';
+            
+            // Aktifkan link HOME di navbar
+            var homeLink = document.querySelector('.nav-links a[onclick="showSection(\'home\')"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
         }
     </script>
 
 </body>
 </html>
+
