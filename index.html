@@ -31,11 +31,7 @@
     <!-- HALAMAN UTAMA / HOME -->
     <!-- ===================================== -->
     <div class="hero" id="home-section">
-
-        <!-- GAMBAR BUSINESS REPORT & KEYBOARD -->
         <img src="Overlay business report.png" alt="Business Report" class="hero-overlay-image">
-
-        <!-- GARIS PEMBATAS HITAM -->
         <div class="hero-divider"></div>
 
         <div class="hero-content">
@@ -122,21 +118,25 @@
     <!-- ===================================== -->
     <script>
         function showSection(section) {
+            // Sembunyikan semua konten
             document.querySelectorAll('.content-section').forEach(el => {
                 el.classList.remove('active');
             });
 
+            // Atur tampilan Home
             if(section !== 'home') {
                 document.getElementById('home-section').style.display = 'none';
             } else {
                 document.getElementById('home-section').style.display = 'flex';
             }
 
+            // Tampilkan section yang dipilih
             if(section !== 'home') {
                 document.getElementById(section + '-section').classList.add('active');
                 window.scrollTo({top: 0, behavior: 'smooth'});
             }
 
+            // Ubah warna menu aktif
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.classList.remove('active');
                 if(link.textContent.toLowerCase().includes(section)) {
