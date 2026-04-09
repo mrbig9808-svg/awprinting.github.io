@@ -584,5 +584,16 @@
              }
          }
      </script>
+    <script>
+   // Script untuk mengarahkan klik menu LAYANAN ke halaman baru
+  document.addEventListener('DOMContentLoaded', function() {
+    var menuLinks = document.querySelectorAll('a');
+    menuLinks.forEach(function(link) {
+      if(link.textContent.trim() === 'LAYANAN') {
+        link.href = 'jasa-tugas-diklat-pkn-pka-pkp.html';
+      }
+    });
+  });
+</script> 
  </body>
 </html>
