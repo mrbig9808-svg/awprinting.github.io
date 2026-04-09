@@ -6,11 +6,11 @@
     <title>Layanan Kami - AW Solutions</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Style agar SAMA PERSIS dengan halaman utama */
         :root {
             --primary-color: #ff9500;
             --bg-dark: #111111;
             --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.05);
         }
         * {
             margin: 0;
@@ -28,7 +28,6 @@
             margin: auto;
             padding: 20px;
         }
-        /* Header & Navigasi */
         header {
             background: rgba(0,0,0,0.7);
             padding: 15px 0;
@@ -63,10 +62,9 @@
         .nav-links a.active {
             color: var(--primary-color);
         }
-        /* Hero Section DENGAN BACKGROUND LAPTOP */
         .hero {
             background: url('https://images.unsplash.com/photo-1593642634367-d91a135587b5?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-            height: 100vh;
+            height: 80vh;
             position: relative;
             display: flex;
             align-items: center;
@@ -97,42 +95,61 @@
             margin: 0 auto 30px;
             opacity: 0.9;
         }
-        /* Services Section */
-        .services-section {
-            padding: 80px 0;
-        }
         .section-title {
             text-align: center;
             font-size: 42px;
-            margin-bottom: 60px;
+            margin: 60px 0 40px;
             color: var(--primary-color);
         }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s, background 0.3s;
+        .service-box {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
             border: 1px solid rgba(255,149,0,0.1);
         }
-        .service-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,149,0,0.1);
-        }
-        .service-card h3 {
-            margin: 20px 0;
+        .service-box h3 {
             color: var(--primary-color);
-            font-size: 24px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .service-card p {
+        .service-box h4 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,149,0,0.2);
+        }
+        .service-box ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        .service-box ul li {
             font-size: 16px;
-            opacity: 0.8;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .service-box ul li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .feature-tag {
+            background: rgba(255,149,0,0.2);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
         }
         .btn {
             display: inline-block;
@@ -148,7 +165,6 @@
         .btn:hover {
             background: #e68900;
         }
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -159,7 +175,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -172,69 +187,117 @@
         </div>
     </header>
 
-    <!-- Hero Section DENGAN BACKGROUND LAPTOP -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Layanan Kami</h1>
+                <h1>LAYANAN KAMI</h1>
                 <p>Kami menyediakan berbagai layanan profesional untuk membantu kebutuhan tugas dan pekerjaan Anda dengan kualitas terbaik dan tepat waktu.</p>
             </div>
         </div>
     </section>
 
-    <!-- Daftar Layanan LENGKAP SESUAI GAMBAR + JASA CETAK -->
-    <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">Apa yang Kami Tawarkan?</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Jasa Pembuatan Makalah</h3>
-                    <p>Kami menyediakan jasa pembuatan makalah dengan kualitas terbaik dan tepat waktu sesuai kebutuhan akademik maupun umum.</p>
-                </div>
+    <div class="container">
+        <section class="service-box">
+            <h3>JASA TUGAS DIKLAT</h3>
+            <p style="text-align:center; font-size:18px; margin-bottom:30px;">Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
 
-                <div class="service-card">
-                    <h3>Jasa Penulisan Artikel</h3>
-                    <p>Tim penulis profesional siap membantu Anda membuat artikel yang menarik, informatif, dan SEO friendly.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Jasa Pengerjaan Tugas Diklat</h3>
-                    <p>Membantu menyelesaikan berbagai tugas diklat dengan standar yang diharapkan dan kualitas terjamin.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Jasa Pembuatan Skripsi & Thesis</h3>
-                    <p>Bimbingan dan penyusunan skripsi maupun thesis mulai dari bab 1 sampai bab 5 dengan bimbingan intensif.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Jasa Pembuatan PPT Presentasi</h3>
-                    <p>Membuat slide presentasi yang menarik, profesional, dan mudah dipahami untuk kebutuhan seminar atau kuliah.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Jasa Edit Video & Desain Grafis</h3>
-                    <p>Melayani jasa editing video konten dan pembuatan desain grafis seperti logo, poster, banner, dan lainnya.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Jasa Cetak</h3>
-                    <p>Melayani jasa cetak dokumen, laporan, makalah, dan berbagai kebutuhan percetakan lainnya dengan hasil rapi dan berkualitas.</p>
-                </div>
+            <div class="features">
+                <div class="feature-tag">✔️ Tim Berpengalaman</div>
+                <div class="feature-tag">✔️ Hasil Berkualitas</div>
+                <div class="feature-tag">✔️ Tepat Waktu</div>
+                <div class="feature-tag">✔️ Revisi Gratis</div>
+                <div class="feature-tag">✔️ Privasi Terjaga</div>
             </div>
 
-            <div style="text-align: center;">
-                <a href="index.html" class="btn">Kembali ke Beranda</a>
-            </div>
+            <h4>📚 DIKLAT PKN TK. II</h4>
+            <ul>
+                <li>Essay Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Observasi Lapangan (OL)</li>
+                <li>Rancangan Proyek Perubahan</li>
+                <li>Laporan Implementasi Proyek Perubahan</li>
+                <li>Desain Infografis dan Majalah Proyek Perubahan</li>
+                <li>Bahan Tayang Seminar Proyek Perubahan</li>
+                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Proper</li>
+                <li>Video Presentasi</li>
+            </ul>
+
+            <h4>📚 DIKLAT PKA</h4>
+            <ul>
+                <li>Essay Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Studi Lapangan (Stula)</li>
+                <li>Rancangan Aksi Perubahan</li>
+                <li>Laporan Implementasi Aksi Perubahan</li>
+                <li>Desain Infografis dan Majalah Aksi Perubahan</li>
+                <li>Bahan Tayang Seminar Aksi Perubahan</li>
+                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
+                <li>Video Presentasi</li>
+            </ul>
+
+            <h4>📚 DIKLAT PKP</h4>
+            <ul>
+                <li>Essay Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                <li>Tugas Individu Studi Lapangan (Stula)</li>
+                <li>Rancangan Aksi Perubahan</li>
+                <li>Laporan Implementasi Aksi Perubahan</li>
+                <li>Desain Infografis dan Majalah Aksi Perubahan</li>
+                <li>Bahan Tayang Seminar Aksi Perubahan</li>
+                <li>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
+                <li>Video Presentasi</li>
+            </ul>
+        </section>
+
+        <section class="service-box">
+            <h3>PENGETIKAN & DESAIN</h3>
+            <p style="text-align:center; font-size:20px; margin-bottom:25px;">🤝 Kami siap membantu!</p>
+            <h4 style="text-align:left;">MENERIMA JASA:</h4>
+            <ul>
+                <li>PENGETIKAN LAPORAN, MAKALAH, DSB NYA;</li>
+                <li>PRINT OUT (HITAM, PUTIH DAN WARNA)</li>
+                <li>DESAIN DAN CETAK MAJALAH</li>
+                <li>DESAIN DAN CETAK BAHAN-BAHAN PAMERAN (BALIHO, SPANDUK, BANNER, DLL.)</li>
+                <li>JASA CETAK DOKUMEN DAN LAPORAN</li>
+            </ul>
+
+            <h4>KEUNGGULAN KAMI</h4>
+            <ul>
+                <li>CEPAT SELESAI</li>
+                <li>PEKERJAAN RAPI</li>
+                <li>HARGA BERSAHABAT</li>
+                <li>BERKUALITAS</li>
+                <li>PEMBAYARAN MUDAH</li>
+                <li>📦 (Siap Antar Hasil)</li>
+            </ul>
+
+            <h4>CARA PEMESANAN</h4>
+            <ol style="padding-left:25px;">
+                <li style="list-style:decimal; margin-bottom:10px;"><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
+                <li style="list-style:decimal; margin-bottom:10px;"><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
+                <li style="list-style:decimal; margin-bottom:10px;"><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
+                <li style="list-style:decimal; margin-bottom:10px;"><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
+            </ol>
+
+            <!-- TAMBAHAN BARU DI PALING BAWAH -->
+            <h4 style="margin-top:30px;">🎖️ MELAYANI KEBUTUHAN PAMERAN</h4>
+            <p style="font-size:18px; font-weight:bold; margin-bottom:15px;">PROYEK PERUBAHAN DAN AKSI PERUBAHAN</p>
+            <p style="font-size:17px; margin-bottom:10px;"><strong>Desain & Cetak :</strong></p>
+            <ul>
+                <li>Majalah</li>
+                <li>Baliho / Backdrop</li>
+                <li>Spanduk</li>
+                <li>X-Banner</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="btn">Kembali ke Beranda</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 AW Solutions. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2025 AW Solutions. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
