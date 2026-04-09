@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan Kami - AW Solutions</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ff9500;
-            --bg-dark: #111111;
-            --text-light: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --secondary-color: #ffb700;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-light: #f5f5f5;
+            --text-muted: #bbbbbb;
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.8;
         }
         .container {
             max-width: 1100px;
@@ -29,11 +33,12 @@
             padding: 20px;
         }
         header {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.85);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .navbar {
             display: flex;
@@ -42,8 +47,9 @@
         }
         .logo {
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--primary-color);
+            letter-spacing: 1px;
         }
         .nav-links {
             display: flex;
@@ -56,7 +62,8 @@
             color: var(--text-light);
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         .nav-links a:hover,
         .nav-links a.active {
@@ -64,7 +71,7 @@
         }
         .hero {
             background: url('https://images.unsplash.com/photo-1593642634367-d91a135587b5?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-            height: 80vh;
+            min-height: 80vh;
             position: relative;
             display: flex;
             align-items: center;
@@ -77,65 +84,84 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
         }
         .hero-content {
             position: relative;
             z-index: 2;
             width: 100%;
+            padding: 20px;
         }
         .hero h1 {
-            font-size: 56px;
+            font-size: 60px;
+            font-weight: 800;
             margin-bottom: 20px;
             color: var(--primary-color);
+            text-shadow: 0 0 20px rgba(255, 149, 0, 0.5);
+            letter-spacing: 2px;
         }
         .hero p {
             font-size: 22px;
             max-width: 800px;
             margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            margin: 60px 0 40px;
-            color: var(--primary-color);
+            color: var(--text-muted);
+            font-weight: 300;
         }
         .service-box {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 35px;
             margin-bottom: 30px;
             border: 1px solid rgba(255,149,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 149, 0, 0.1);
         }
         .service-box h3 {
             color: var(--primary-color);
-            font-size: 28px;
+            font-size: 32px;
+            font-weight: 700;
             margin-bottom: 20px;
             text-align: center;
+            letter-spacing: 1px;
         }
         .service-box h4 {
             color: var(--primary-color);
-            font-size: 22px;
-            margin: 25px 0 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,149,0,0.2);
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,149,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .service-box p {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-align: justify;
         }
         .service-box ul {
             list-style: none;
             padding-left: 10px;
         }
         .service-box ul li {
-            font-size: 16px;
-            margin-bottom: 12px;
-            padding-left: 25px;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 35px;
             position: relative;
+            color: var(--text-light);
+            font-weight: 400;
         }
         .service-box ul li::before {
             content: "✔️";
             position: absolute;
             left: 0;
-            color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 20px;
         }
         .features {
             display: flex;
@@ -145,25 +171,32 @@
             margin: 30px 0;
         }
         .feature-tag {
-            background: rgba(255,149,0,0.2);
+            background: rgba(255,149,0,0.15);
             color: var(--primary-color);
-            padding: 10px 25px;
+            padding: 12px 25px;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid rgba(255,149,0,0.2);
         }
         .btn {
             display: inline-block;
-            padding: 15px 40px;
-            background: var(--primary-color);
+            padding: 16px 45px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             margin-top: 40px;
             font-size: 18px;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .btn:hover {
-            background: #e68900;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 149, 0, 0.4);
         }
         footer {
             text-align: center;
@@ -171,35 +204,45 @@
             margin-top: 50px;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 16px;
+            color: var(--text-muted);
         }
         /* STYLE KHUSUS JUDUL PAMERAN */
         .pameran-title {
             text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.5;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255,149,0,0.2); /* GARIS ORANYE */
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,149,0,0.3);
         }
         .pameran-title .baris-utama {
             display: block;
-            font-size: 36px;
-            font-weight: bold;
+            font-size: 42px;
+            font-weight: 800;
             color: var(--primary-color);
-            margin: 8px 0;
+            margin: 12px 0;
+            text-shadow: 0 0 15px rgba(255, 149, 0, 0.3);
+            letter-spacing: 2px;
         }
         .pameran-title .baris-kedua {
             display: block;
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 36px;
+            font-weight: 700;
             color: var(--primary-color);
-            margin: 8px 0;
+            margin: 12px 0;
+            letter-spacing: 1px;
         }
         .pameran-title .sub-judul {
-            font-size: 24px;
-            margin-top: 20px;
+            font-size: 26px;
+            margin-top: 25px;
             color: var(--primary-color);
-            border: none;
-            padding-bottom: 0;
+            font-weight: 600;
+        }
+        ol li {
+            font-size: 17px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+        ol li strong {
+            color: var(--text-light);
         }
     </style>
 </head>
@@ -220,7 +263,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>LAYANAN KAMI</h1>
-                <p>Kami menyediakan berbagai layanan profesional untuk membantu kebutuhan tugas dan pekerjaan Anda dengan kualitas terbaik dan tepat waktu.</p>
+                <p>Kami menyediakan solusi profesional untuk membantu kebutuhan tugas dan pekerjaan Anda dengan kualitas terbaik, desain elegan, dan ketepatan waktu.</p>
             </div>
         </div>
     </section>
@@ -228,7 +271,7 @@
     <div class="container">
         <section class="service-box">
             <h3>JASA TUGAS DIKLAT</h3>
-            <p style="text-align:center; font-size:18px; margin-bottom:30px;">Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
+            <p style="text-align:center;">Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
 
             <div class="features">
                 <div class="feature-tag">✔️ Tim Berpengalaman</div>
@@ -277,14 +320,13 @@
                 <li>Video Presentasi</li>
             </ul>
         </section>
-
-        <!-- BAGIAN PAMERAN DENGAN GARIS -->
+        <!-- BAGIAN PAMERAN -->
         <section class="service-box">
             <div class="pameran-title">
                 <span class="baris-utama">🎖️ MELAYANI KEBUTUHAN PAMERAN</span>
                 <span class="baris-kedua">PROYEK PERUBAHAN DAN AKSI PERUBAHAN</span>
             </div>
-            <h4 class="sub-judul">Desain & Cetak :</h4>
+            <h4 style="border: none; padding-bottom: 0; margin-bottom: 20px;">Desain & Cetak :</h4>
             <ul>
                 <li>Majalah</li>
                 <li>Baliho / Backdrop</li>
@@ -295,10 +337,11 @@
 
         <section class="service-box">
             <h3>PENGETIKAN & DESAIN</h3>
-            <p style="text-align:center; font-size:20px; margin-bottom:25px;">🤝 Kami siap membantu!</p>
-            <h4 style="text-align:left;">MENERIMA JASA:</h4>
+            <p style="text-align:center; font-size:20px; font-weight:500;">🤝 Kami siap membantu mewujudkan kebutuhan administrasi dan desain Anda!</p>
+            
+            <h4>MENERIMA JASA:</h4>
             <ul>
-                <li>Pengetikan Laporan, Makalah, dan dokumen lainnya;</li>
+                <li>Pengetikan Laporan, Makalah, Skripsi, dan dokumen lainnya;</li>
                 <li>Print Out (Hitam Putih dan Berwarna)</li>
                 <li>Desain dan Cetak Majalah</li>
                 <li>Desain dan Cetak Materi Pameran (Baliho, Spanduk, Banner, dll.)</li>
@@ -307,20 +350,20 @@
 
             <h4>KEUNGGULAN KAMI</h4>
             <ul>
-                <li>Cepat Selesai</li>
-                <li>Pengerjaan Rapi dan Teliti</li>
-                <li>Harga Bersahabat</li>
-                <li>Kualitas Terjamin</li>
-                <li>Pembayaran Mudah</li>
+                <li>Pengerjaan Cepat dan Tepat Waktu</li>
+                <li>Hasil Rapi, Teliti, dan Berkualitas</li>
+                <li>Harga Bersahabat dan Bersaing</li>
+                <li>Kualitas Print dan Kertas Terjamin</li>
+                <li>Sistem Pembayaran Mudah dan Fleksibel</li>
                 <li>📦 Layanan Antar Hasil Tersedia</li>
             </ul>
 
             <h4>CARA PEMESANAN</h4>
-            <ol style="padding-left:25px;">
-                <li style="list-style:decimal; margin-bottom:10px;"><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
-                <li style="list-style:decimal; margin-bottom:10px;"><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
-                <li style="list-style:decimal; margin-bottom:10px;"><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
-                <li style="list-style:decimal; margin-bottom:10px;"><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
+            <ol>
+                <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
+                <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
+                <li><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
+                <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
             </ol>
         </section>
 
@@ -334,3 +377,4 @@
     </footer>
 </body>
 </html>
+    
