@@ -167,10 +167,6 @@
             text-align: left;
         }
 
-        .content-section.active {
-            display: block;
-        }
-
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -244,14 +240,6 @@
             font-size: 0.95em;
             font-weight: 600;
             color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .item:hover {
-            background: var(--orange);
-            color: var(--dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.4);
         }
 
         .service-box {
@@ -260,14 +248,11 @@
             border-radius: 10px;
             border: 1px solid #555;
             margin: 20px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             text-align: left;
         }
 
         .service-box h3 {
-            color: var(--gold);
             margin-bottom: 15px;
-            font-size: 1.4em;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding-bottom: 8px;
         }
@@ -280,13 +265,10 @@
         .service-box ul li {
             padding: 8px 0;
             color: #eee;
-            font-size: 1em;
-            line-height: 1.5;
             display: flex;
             align-items: center;
         }
 
-        /* STYLE ICON CENTANG HIJAU */
         .check-icon {
             width: 24px;
             height: 24px;
@@ -323,13 +305,6 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 1/1;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
         }
 
         .gallery-item img {
@@ -350,29 +325,18 @@
             padding: 40px 30px;
             border-radius: 10px;
             border: 1px solid #444;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         .contact-info h3 {
             color: var(--orange);
             font-size: 1.8em;
             margin-bottom: 25px;
-            letter-spacing: 1px;
         }
 
         .contact-info p {
             font-size: 1.3em;
             margin: 15px 0;
             color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .contact-info p::before {
-            content: '📞';
-            color: var(--gold);
         }
 
         .wa-button {
@@ -384,15 +348,6 @@
             text-decoration: none !important;
             font-weight: 600;
             margin-top: 20px;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
-            letter-spacing: 0.5px;
-        }
-
-        .wa-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(45deg, #128C7E, #25D366);
         }
     </style>
 </head>
@@ -426,7 +381,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- ===================================== -->
     <!-- HALAMAN PROFILE -->
     <!-- ===================================== -->
@@ -449,34 +404,31 @@
             
             <ul style="list-style: none; padding-left: 0; font-size: 1.1em; line-height: 1.8;">
                 <li style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #444;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon">
                     <span>Memberikan pelayanan yang cepat, tepat, dan akurat.</span>
                 </li>
                 <li style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #444;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon">
                     <span>Menghasilkan karya desain yang estetik dan fungsional.</span>
                 </li>
                 <li style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #444;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon">
                     <span>Menjaga kerahasiaan dan kepuasan pelanggan sebagai prioritas utama.</span>
                 </li>
                 <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon">
                     <span>Terus berinovasi mengikuti perkembangan zaman.</span>
                 </li>
             </ul>
 
-            <!-- BAGIAN BARU: KOMITMEN KAMI -->
-            <h3 style="color: var(--gold); font-size: 2.2em; margin: 40px 0 20px; font-family: 'Playfair Display', serif; font-weight: 700; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px;">
-                <span style="color: var(--orange);">🔹</span> KOMITMEN KAMI
-            </h3>
+            <h3 style="color: var(--gold); font-size: 2.2em; margin: 40px 0 20px; font-family: 'Playfair Display', serif; font-weight: 700;">KOMITMEN KAMI
+           </h3>
             <p style="font-size: 1.1em; line-height: 1.8;">
                 Dengan tim yang berpengalaman, kami menjamin setiap pekerjaan diselesaikan sesuai standar, rapi, dan memprioritaskan kepuasan serta privasi Anda.
             </p>
-
         </div>
     </div>
-    
+
     <!-- ===================================== -->
     <!-- HALAMAN LAYANAN / JASA -->
     <!-- ===================================== -->
@@ -486,10 +438,7 @@
         </div>
 
         <div class="article-content">
-
-            <!-- BAGIAN DIKLAT -->
-            <h2 class="section-heading-orange">🔹 JASA TUGAS DIKLAT 🔹</h2>
-
+            <h2 class="section-heading-orange">🔹 JASA PEMBUATAN TUGAS DIKLAT 🔹</h2>
             <p>Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.</p>
 
             <div class="keunggulan">
@@ -501,61 +450,59 @@
             </div>
 
             <div class="service-box">
-                <h3>🔹 Diklat PKN</h3>
+                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">DIKLAT PKN</h3>
                 <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, Agenda II, Agenda III</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, II, III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, II, III</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Observasi Lapangan (OL)</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Rancangan Proyek Perubahan</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Laporan Implementasi Proyek Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis dan Majalah Proyek Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar Proyek Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/ Spanduk/ X-Banner Pameran Proper</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis & Majalah</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/Spanduk/X-Banner</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Video Presentasi</li>
                 </ul>
             </div>
 
             <div class="service-box">
-                <h3>🔹 Diklat PKA</h3>
+                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">DIKLAT PKA</h3>
                 <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, Agenda II, Agenda III</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, II, III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, II, III</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Studi Lapangan (Stula)</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Rancangan Aksi Perubahan</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Laporan Implementasi Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis dan Majalah Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis & Majalah</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/Spanduk/X-Banner</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Video Presentasi</li>
                 </ul>
             </div>
 
             <div class="service-box">
-                <h3>🔹 Diklat PKP</h3>
+                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">DIKLAT PKP</h3>
                 <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, Agenda II, Agenda III</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, Agenda II, Agenda III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Essay Agenda I, II, III</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Agenda I, II, III</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Tugas Individu Studi Lapangan (Stula)</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Rancangan Aksi Perubahan</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Laporan Implementasi Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis dan Majalah Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar Aksi Perubahan</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/ Spanduk/ X-Banner Pameran Akper</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Infografis & Majalah</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Bahan Tayang Seminar</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Desain Baliho/Spanduk/X-Banner</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Video Presentasi</li>
                 </ul>
             </div>
 
             <hr style="margin: 30px auto; border-color: #333; border-width:2px; max-width: 80%;">
 
-            <!-- BAGIAN PAMERAN -->
             <h2 class="section-heading-orange">🔹 MELAYANI KEBUTUHAN PAMERAN 🔹</h2>
             <hr class="divider-line">
             <h3 class="sub-heading-gold">PROYEK PERUBAHAN & AKSI PERUBAHAN</h3>
-
-            <p style="text-align:center; font-size:1.2em; color:#fff;">🤝 Kami siap membantu mewujudkan kebutuhan administrasi dan desain Anda!</p>
+            <p style="text-align:center; font-size:1.2em;">🤝 Kami siap membantu mewujudkan kebutuhan administrasi dan desain Anda!</p>
 
             <div class="service-box">
-                <h3>DESAIN & CETAK :</h3>
+                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">DESAIN & CETAK</h3>
                 <ul>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Majalah</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Baliho / Backdrop</li>
@@ -565,7 +512,7 @@
             </div>
 
             <div class="service-box">
-                <h3>KEUNGGULAN KAMI</h3>
+                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">KEUNGGULAN KAMI</h3>
                 <ul>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Cepat Selesai</li>
                     <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Pekerjaan Rapi</li>
@@ -576,10 +523,8 @@
                 <p style="text-align:center; margin-top:15px;">🚗 (Siap Antar Hasil)</p>
             </div>
 
-            <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
-
             <div class="how-to-order">
-                <h3 style="text-align:center; color: var(--orange); margin-top:20px; font-size: 1.6em;">📞 Cara Pemesanan</h3>
+                <h3 style="text-align:center; color: var(--orange); font-size: 1.6em;">📞 Cara Pemesanan</h3>
                 <ol>
                     <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
                     <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
@@ -587,7 +532,6 @@
                     <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
                 </ol>
             </div>
-
         </div>
     </div>
 
@@ -597,19 +541,15 @@
     <div id="portfolio-section" class="content-section">
         <div class="section-title">
             <h2>PORTO <span>FOLIO</span></h2>
-            <p class="portfolio-description">(Cetak Majalah, Baliho/Backdrop, Spanduk, X-Banner, dll. untuk bahan Ujian dan Pameran)</p>
+            <p class="portfolio-description">(Cetak Majalah, Baliho/Backdrop, Spanduk, X-Banner, dll.)</p>
         </div>
         <div class="gallery">
             <div class="gallery-item"><img src="Banner 01.jpg" alt="Banner 01"></div>
             <div class="gallery-item"><img src="Banner 02.jpg" alt="Banner 02"></div>
             <div class="gallery-item"><img src="Majalah 01.jpg" alt="Majalah 01"></div>
             <div class="gallery-item"><img src="Majalah 02.jpg" alt="Majalah 02"></div>
-            <div class="gallery-item"><img src="Majalah 03.jpg" alt="Majalah 03"></div>
-            <div class="gallery-item"><img src="Majalah 04.jpg" alt="Majalah 04"></div>
-            <div class="gallery-item"><img src="Majalah 05.jpg" alt="Majalah 05"></div>
-            <div class="gallery-item"><img src="Spanduk nama stand.jpg" alt="Spanduk nama stand"></div>
-            <div class="gallery-item"><img src="Backdrop 01.jpg" alt="Backdrop 01"></div>
-            <div class="gallery-item"><img src="Backdrop 02.jpg" alt="Backdrop 02"></div>
+            <div class="gallery-item"><img src="Spanduk 01.jpg" alt="Spanduk 01"></div>
+            <div class="gallery-item"><img src="Spanduk 02.jpg" alt="Spanduk 02"></div>
         </div>
     </div>
 
@@ -618,50 +558,35 @@
     <!-- ===================================== -->
     <div id="contact-section" class="content-section">
         <div class="section-title">
-            <h2>HUBUNGI <span>KAMI</span></h2>
+            <h2>KONTAK <span>KAMI</span></h2>
         </div>
         <div class="contact-info">
-            <h3>ADMIN :</h3>
-            <p class="phone-number">0821 8766 2626</p>
-            <p class="phone-number">0859 7515 3455</p>
-
-            <a href="https://wa.me/6282187662626" class="wa-button">CHAT VIA WHATSAPP 1</a>
-            <a href="https://wa.me/6285975153455" class="wa-button">CHAT VIA WHATSAPP 2</a>
+            <h3>Hubungi Kami</h3>
+            <p>0812-xxxx-xxxx</p>
+            <p>0812-xxxx-xxxx</p>
+            <a href="https://wa.me/62812xxxxxxx?text=Halo%20Admin%20AW%20Solutions" class="wa-button" target="_blank">CHAT VIA WHATSAPP</a>
+            <a href="https://wa.me/6812xxxxxxx?text=Halo%20Admin%20AW%20Solutions" class="wa-button" target="_blank">CHAT VIA WHATSAPP</a>
         </div>
     </div>
 
     <!-- ===================================== -->
-    <!-- JAVASCRIPT UNTUK MENU -->
+    <!-- SCRIPT JAVASCRIPT -->
     <!-- ===================================== -->
     <script>
-        function showSection(sectionId) {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('profile-section').style.display = 'none';
-            document.getElementById('services-section').style.display = 'none';
-            document.getElementById('portfolio-section').style.display = 'none';
-            document.getElementById('contact-section').style.display = 'none';
+        function showSection(id) {
+            // Sembunyikan semua section
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(sec => sec.style.display = 'none');
 
-            var links = document.querySelectorAll('.nav-links a');
-            links.forEach(function(link) {
-                link.classList.remove('active');
-            });
+            // Tampilkan section yang dipilih
+            document.getElementById(id + '-section').style.display = 'block';
 
-            document.getElementById(sectionId + '-section').style.display = 'block';
-
-            var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
-            if (clickedLink) {
-                clickedLink.classList.add('active');
-            }
-        }
-
-        window.onload = function() {
-            document.getElementById('home-section').style.display = 'block';
-            var homeLink = document.querySelector('.nav-links a[onclick="showSection(\'home\')"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
-            }
+            // Ubah style menu aktif
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
         }
     </script>
 </body>
 </html>
-                                       
+    
