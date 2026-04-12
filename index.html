@@ -3,856 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AW Solutions - Jasa Tugas Diklat PKN, PKA, PKP</title>
-    
-    <!-- ===================================== -->
-    <!-- KODE TAMBAHAN AGAR DAPAT DICARI DI GOOGLE -->
-    <!-- ===================================== -->
-    <meta name="description" content="AW Solutions menyediakan jasa pembuatan dan penyusunan tugas Diklat PKN, PKA, PKP dengan cepat, rapi, dan berkualitas. Berlokasi di Makassar. Hubungi kami sekarang!">
-    <meta name="keywords" content="Jasa Tugas Diklat PKN, Jasa Tugas Diklat PKA, Jasa Tugas Diklat PKP, Makassar, AW Solutions, Pengetikan, Desain, Cetak">
-    <meta name="robots" content="index, follow">
-    <!-- ===================================== -->
-    <!-- AKHIR KODE TAMBAHAN -->
-    <!-- ===================================== -->
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --black: #000000;
-            --dark: #111111;
-            --light-gray: #e0e0e0;
-            --gold: #D4AF37;
-            --orange: #FF9500;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--black);
-            color: #fff;
-            overflow-x: hidden;
-            text-align: center;
-        }
-
-        /* ===================================== */
-        /* MENU NAVIGASI */
-        /* ===================================== */
-        .navbar {
-            background: transparent;
-            padding: 25px 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            text-align: center;
-            width: 100%;
-            flex-wrap: nowrap;
-        }
-
-        .nav-links a {
-            color: var(--light-gray) !important;
-            text-decoration: none !important;
-            font-size: 0.9em;
-            font-family: 'Playfair Display', serif;
-            text-transform: uppercase;
-            padding: 5px 5px;
-            letter-spacing: 1px;
-            border-bottom: none !important;
-            white-space: nowrap;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--gold) !important;
-            background-color: rgba(212, 175, 55, 0.1);
-            border-radius: 5px;
-        }
-
-        /* ===================================== */
-        /* BAGIAN HOME */
-        /* ===================================== */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background laptop.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding-top: 80px;
-            width: 100%;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 3;
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            padding: 0 15px;
-            margin-top: 15vh;
-        }
-
-        /* ===================================== */
-        /* LOGO BULAT */
-        /* ===================================== */
-        .logo-circle {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .logo-circle:hover {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
-        }
-
-        .logo-circle .big-letters {
-            font-size: 3em;
-            font-weight: 700;
-            color: #ffffff;
-            font-family: 'Playfair Display', serif;
-            line-height: 1;
-        }
-
-        .logo-circle .small-text {
-            font-size: 0.6em;
-            color: var(--gold);
-            letter-spacing: 2px;
-            margin-top: 2px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2em;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            line-height: 1.2;
-            margin-top: 15px;
-        }
-
-        .hero-content h1 .aw-text { color: white; }
-        .hero-content h1 .solutions-text { color: var(--gold); }
-
-        .hero-subtitle {
-            font-size: 1.1em;
-            color: #f0f0f0;
-            margin-top: 8px;
-        }
-
-        /* ===================================== */
-        /* STYLE KONTEN DINAMIS */
-        /* ===================================== */
-        .content-section {
-            display: none;
-            padding: 100px 15px 30px;
-            background: var(--dark);
-            min-height: 100vh;
-            text-align: left;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-        }
-
-        .section-title h2 span {
-            color: var(--orange);
-        }
-
-        /* ===================================== */
-        /* STYLE ISI KONTEN / ARTIKEL */
-        /* ===================================== */
-        .article-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #444;
-            line-height: 1.8;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .article-content p {
-            margin-bottom: 15px;
-            color: #ddd;
-        }
-
-        .section-heading-orange {
-            text-align: center;
-            color: var(--orange);
-            margin-bottom: 10px;
-            font-size: 1.8em;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .sub-heading-gold {
-            text-align: center;
-            color: var(--gold);
-            font-size: 1.5em;
-            margin: 10px 0 25px;
-            font-weight: 600;
-        }
-
-        .divider-line {
-            width: 60%;
-            margin: 0 auto 20px;
-            border: none;
-            border-top: 1px solid rgba(255,149,0,0.3);
-        }
-
-        .keunggulan {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 25px 0;
-        }
-
-        .item {
-            background: rgba(255, 149, 0, 0.15);
-            padding: 12px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--orange);
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .item:hover {
-            background: var(--orange);
-            color: var(--dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.4);
-        }
-
-        .service-box {
-            background: rgba(255,255,255,0.07);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #555;
-            margin: 20px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            text-align: left;
-        }
-
-        .service-box h3 {
-            color: var(--gold);
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 8px;
-        }
-
-        .service-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .service-box ul li {
-            padding: 8px 0;
-            color: #eee;
-            font-size: 1em;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-        }
-
-        /* STYLE ICON CENTANG HIJAU */
-        .check-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-
-        .how-to-order ol {
-            list-style-type: decimal;
-            padding-left: 25px;
-            margin-top: 15px;
-        }
-        .how-to-order ol li {
-            margin-bottom: 10px;
-            color: #ddd;
-        }
-        .how-to-order ol li strong {
-            color: var(--gold);
-        }
-
-        /* ===================================== */
-        /* STYLE GALERI / PORTOFOLIO */
-        /* ===================================== */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            border: 2px solid var(--gold);
-            border-radius: 8px;
-            overflow: hidden;
-            aspect-ratio: 1/1;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* ===================================== */
-        /* STYLE KONTAK & WHATSAPP */
-        /* ===================================== */
-        .contact-info {
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            padding: 40px 30px;
-            border-radius: 10px;
-            border: 1px solid #444;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .contact-info h3 {
-            color: var(--orange);
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        .contact-info p {
-            font-size: 1.3em;
-            margin: 15px 0;
-            color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .contact-info p::before {
-            content: '📞';
-            color: var(--gold);
-        }
-
-        .wa-button {
-            display: block;
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            color: white !important;
-            padding: 15px;
-            border-radius: 30px;
-            text-decoration: none !important;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
-            letter-spacing: 0.5px;
-        }
-
-        .wa-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
-            background: linear-gradient(45deg, #128C7E, #25D366);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="navbar">
-        <div class="nav-links">
-            <a onclick="showSection('home')" class="active">HOME</a>
-            <a onclick="showSection('profile')">PROFIL</a>
-            <a onclick="showSection('services')">LAYANAN</a>
-            <a onclick="showSection('portfolio')">PORTOFOLIO</a>
-            <a onclick="showSection('contact')">KONTAK</a>
-        </div>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- HALAMAN HOME -->
-    <!-- ===================================== -->
-    <div id="home-section" class="content-section">
-        <div class="hero">
-            <div class="hero-content">
-                <div class="logo-circle">
-                    <span class="big-letters">AW</span>
-                    <span class="small-text">SOLUTIONS</span>
-                </div>
-                <h1><span class="aw-text">AW</span> <span class="solutions-text">SOLUTIONS</span></h1>
-                <p class="hero-subtitle">
-                    (Jasa Tugas Diklat PKN, PKA, PKP)<br>
-                    Pengetikan, Desain & Cetak
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===================================== -->
-    <!-- HALAMAN PROFIL -->
-    <!-- ===================================== -->
-    <div id="profile-section" class="content-section">
-        <div class="section-title">
-            <h2><span style="color: var(--orange);">PROFIL</span> KAMI</h2>
-        </div>
-
-        <div class="article-content">
-            <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                Selamat datang di <strong>AW Solutions</strong>, mitra terpercaya Anda dalam penyelesaian tugas-tugas diklat dan kebutuhan desain profesional.
-            </p>
-
-            <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Visi Kami</h3>
-            <hr style="border: none; border-top: 1px solid rgba(212, 175, 55, 0.3); margin: 0 auto 20px auto; width: 100%;">
-            <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                Menjadi penyedia jasa terbaik yang memberikan solusi kreatif, inovatif, dan berkualitas tinggi untuk mendukung kesuksesan karier Anda.
-            </p>
-
-            <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Misi Kami</h3>
-            <hr style="border: none; border-top: 1px solid rgba(212, 175, 55, 0.3); margin: 0 auto 20px auto; width: 100%;">
-            
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                    <span>Memberikan pelayanan yang cepat, tepat, dan akurat.</span>
-                </li>
-                <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                    <span>Menghasilkan karya desain yang estetik dan fungsional.</span>
-                </li>
-                <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                    <span>Menjaga kerahasiaan dan kepuasan pelanggan sebagai prioritas utama.</span>
-                </li>
-                <li style="display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                    <span>Terus berinovasi mengikuti perkembangan zaman.</span>
-                </li>
-            </ul>
-
-            <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Komitmen Kami</h3>
-            <hr style="border: none; border-top: 1px solid rgba(212, 175, 55, 0.3); margin: 0 auto 20px auto; width: 100%;">
-            <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                Dengan tim yang berpengalaman, kami menjamin setiap pekerjaan diselesaikan sesuai standar, rapi, dan memprioritaskan kepuasan serta privasi Anda.
-            </p>
-
-        </div>
-    </div>
-    
-    <!-- ===================================== -->
-    <!-- HALAMAN LAYANAN / JASA -->
-    <!-- ===================================== -->
-    <div id="services-section" class="content-section">
-        <div class="section-title">
-            <h2>LAYANAN <span>KAMI</span></h2>
-        </div>
-
-        <div class="article-content">
-
-            <!-- BAGIAN DIKLAT -->
-            <h2 class="section-heading-orange" style="font-weight: 600; display: flex; align-items: center;">🔹 JASA TUGAS DIKLAT 🔹</h2>
-
-            <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff;">
-                Sedang sibuk dengan pekerjaan dan kesulitan menyelesaikan tugas diklat? Tenang saja, kami hadir sebagai solusi terbaik untuk membantu Anda menyelesaikan <strong>tugas diklat PKN, PKA, dan PKP</strong> dengan hasil yang berkualitas, sesuai standar, dan tepat waktu.
-            </p>
-
-            <div class="keunggulan">
-                <div class="item">✅ Tim Berpengalaman</div>
-                <div class="item">✅ Hasil Berkualitas</div>
-                <div class="item">✅ Tepat Waktu</div>
-                <div class="item">✅ Revisi Gratis</div>
-                <div class="item">✅ Privasi Terjaga</div>
-            </div>
-
-            <div class="service-box">
-                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Diklat PKN</h3>
-                <ul>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Essay Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Observasi Lapangan (OL)</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Rancangan Proyek Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Laporan Implementasi Proyek Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Infografis dan Majalah Proyek Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Bahan Tayang Seminar Proyek Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Baliho/ Spanduk/ X-Banner Pameran Proper</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Video Presentasi</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="service-box">
-                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Diklat PKA</h3>
-                <ul>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Essay Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Studi Lapangan (Stula)</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Rancangan Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Laporan Implementasi Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Infografis dan Majalah Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Bahan Tayang Seminar Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Video Presentasi</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="service-box">
-                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Diklat PKP</h3>
-                <ul>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Essay Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Agenda I, Agenda II, Agenda III</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Tugas Individu Studi Lapangan (Stula)</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Rancangan Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Laporan Implementasi Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Infografis dan Majalah Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Bahan Tayang Seminar Aksi Perubahan</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Desain Baliho/ Spanduk/ X-Banner Pameran Akper</span>
-                    </li>
-                    <li style="font-size: 1.2em; line-height: 1.6; color: #ffffff; display: flex; align-items: flex-start; margin-bottom: 5px;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon" style="margin-top: 5px; margin-right: 15px;">
-                        <span>Video Presentasi</span>
-                    </li>
-                </ul>
-            </div>
-                
-            <hr style="margin: 30px auto; border-color: #333; border-width:2px; max-width: 80%;">
-
-                   <!-- BAGIAN PAMERAN -->
-             <h2 class="section-heading-orange" style="font-weight: 600; text-align: center; font-size: 1.5em; font-family: Arial, Helvetica, sans-serif; font-stretch: condensed; letter-spacing: -0.5px; margin-top: 0; margin-bottom: 10px; border: none; box-shadow: none;">
-                 MELAYANI KEBUTUHAN PAMERAN
-             </h2>
-             <div style="border-bottom: 1px solid #b8860b; width: 80%; margin: 5px auto 20px auto;"></div>
-             
-             <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 700; text-align: center; letter-spacing: 1px; line-height: 1.5; margin-top: 0; margin-bottom: 15px;">
-                 PROYEK PERUBAHAN & AKSI<br>
-                 PERUBAHAN
-             </h3>
-             <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff; text-align: center; margin-top: 10px; margin-bottom: 20px;">
-                 🤝 Kami siap membantu mewujudkan kebutuhan administrasi dan desain Anda!</p>
-             <div class="service-box">
-                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Desain & Cetak</h3>
-                <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Majalah</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Baliho / Backdrop</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Spanduk</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> X-Banner, dll</li>
-                </ul>
-            </div>
-            <div class="service-box">
-                <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8em; font-weight: 700;">Keunggulan Kami</h3>
-                <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Cepat Selesai</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Pekerjaan Rapi</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Harga Bersahabat</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Berkualitas</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Pembayaran Mudah</li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Check" class="check-icon"> Siap Antar Hasil</li>
-                </ul>
-            </div>
-
-            <hr style="margin: 20px auto; border-color: #333; max-width: 80%;">
-
-            <div class="how-to-order">
-                <h3 style="text-align:center; color: var(--orange); margin-top:20px; font-size: 1.6em;">📞 Cara Pemesanan</h3>
-                <ol>
-                    <li><strong>Hubungi Kami:</strong> Sampaikan jenis tugas, topik, dan tenggat waktu.</li>
-                    <li><strong>Konsultasi:</strong> Diskusi detail materi dan format penulisan.</li>
-                    <li><strong>Proses:</strong> Tim kami segera menyusun tugas sesuai kesepakatan.</li>
-                    <li><strong>Pengiriman:</strong> Hasil dikirimkan rapi dan siap cetak.</li>
-                </ol>
-            </div>
-
-        </div>
-    </div>
-    
-<!-- ===================================== -->
-<!-- HALAMAN PORTOFOLIO -->
-<!-- ===================================== -->
-<div id="portfolio-section" class="content-section">
-
-    <!-- Font disamakan dengan Visi Kami dan rata tengah -->
-    <h3 class="sub-heading-gold" style="font-family: 'Times New Roman', 'Playfair Display', serif; font-size: 2em; font-weight: bold; text-align: center;">Hasil Karya & Karya Unggulan</h3>
-    <hr class="divider-line">
-
-    <!-- Tulisan putih diatur rata tengah -->
-    <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff; margin: 20px 0; padding: 0; text-align: center;">
-        Berikut adalah bukti nyata dedikasi kami dalam menghasilkan karya terbaik untuk kebutuhan bahan pameran dan administrasi. Khususnya bagi peserta Diklat PKN, PKA, PKP serta berbagai instansi pemerintahan. Kami pastikan setiap inci cetakan memiliki kualitas warna yang tajam, tahan lama, dan tata letak yang rapi sesuai standar profesional tinggi.
-    </p>
-
-    <div class="keunggulan">
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Cetak Majalah & Laporan Resmi</div>
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Desain Infografis Visual</div>
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Baliho & Backdrop Berkualitas</div>
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Spanduk & Identitas Stand</div>
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Bahan Pameran Proyek Perubahan</div>
-        <div class="item" style="text-align: center; font-size: 1.2em;">• Dokumentasi Aksi Perubahan</div>
-    </div>
-
-    <!-- BAGIAN GALERI -->
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="Banner 01.jpg" alt="Banner 01">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Cetak spanduk besar dengan warna tajam</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Banner 02.jpg" alt="Banner 02">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Desain infografis yang menarik & informatif</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Majalah 01.jpg" alt="Majalah 01">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Pembuatan majalah laporan yang rapi</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Majalah 02.jpg" alt="Majalah 02">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Modul & buku panduan tampilan eksklusif</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Majalah 03.jpg" alt="Majalah 03">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Kemampuan cetak jumlah besar & presisi</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Majalah 04.jpg" alt="Majalah 04">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Desain garis waktu yang jelas & apik</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Majalah 05.jpg" alt="Majalah 05">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Penyusunan dokumen administrasi lengkap</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Spanduk nama stand.jpg" alt="Spanduk nama stand">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Identitas stan pameran yang menonjol</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Backdrop 01.jpg" alt="Backdrop 01">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Latar belakang acara yang megah & tegas</p>
-        </div>
-        <div class="gallery-item">
-            <img src="Backdrop 02.jpg" alt="Backdrop 02">
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Desain latar kegiatan yang profesional</p>
-        </div>
-        <!-- Tambahan Video -->
-        <div class="gallery-item">
-            <video controls width="100%" height="auto" style="display: block;">
-                <source src="Cetak Majalah 01.mp4" type="video/mp4">
-                Maaf, peramban Anda tidak mendukung pemutaran video ini.
-            </video>
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Video tampilan kualitas hasil cetak</p>
-        </div>
-        <div class="gallery-item">
-            <video controls width="100%" height="auto" style="display: block;">
-                <source src="Catak Majalah 02.mp4" type="video/mp4">
-                Maaf, peramban Anda tidak mendukung pemutaran video ini.
-            </video>
-            <p style="font-size: 1.2em; line-height: 1.4; color: #ffffff; padding: 10px; margin: 0; text-align: center;">Video detail proses pengerjaan</p>
-        </div>
-    </div>
-
-    <!-- PARAGRAF PENJELASAN DI BAWAH GALERI, RATA TENGAH -->
-    <p style="font-size: 1.2em; line-height: 1.8; color: #ffffff; margin: 20px 0; padding: 0; text-align: center;">
-        Di sini, kami telah mewujudkan berbagai kebutuhan mulai dari majalah laporan diklat yang elegan, desain visual yang memukau untuk proyek perubahan, hingga materi promosi dan presentasi yang informatif. Mulai dari peta tematik, infografis capaian kinerja, hingga spanduk pameran, semuanya dikerjakan dengan ketelitian tinggi dan kesesuaian pedoman instansi terkait demi hasil maksimal.
-    </p>
-    
-</div>
-    
-    <!-- ===================================== -->
-    <!-- HALAMAN KONTAK (VERSI BERSIH) -->
-    <!-- ===================================== -->
-    <div id="contact-section" class="content-section" style="display: block; width: 100%;">
-    <div class="section-title" style="text-align: center; margin-bottom: 20px;">
-        <h2 style="font-size: 3em; font-weight: bold;">HUBUNGI <span style="color: #ff9f1c;">KAMI</span></h2>
-    </div>
-
-    <div style="background-color: #222222; border-radius: 12px; padding: 30px; margin-top: 20px; text-align: center; position: relative; overflow: hidden;">
-        
-        <!-- Judul Admin -->
-        <h3 style="color: #ff9f1c; font-size: 2em; font-weight: 700; margin-bottom: 30px; font-family: sans-serif;">ADMIN :</h3>
-        
-        <!-- Baris Kontak Tanpa Gaya Tambahan -->
-        <div style="margin-bottom: 15px; font-size: 1.4em; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
-            <span style="font-size: 1.2em; margin-right: 10px; line-height: 1;">📞</span>
-            <span>0821 8766 2626</span>
-        </div>
-
-        <div style="margin-bottom: 15px; font-size: 1.4em; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
-            <span style="font-size: 1.2em; margin-right: 10px; line-height: 1;">📞</span>
-            <span>0859 7515 3455</span>
-        </div>
-
-        <div style="margin-bottom: 15px; font-size: 1.4em; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
-            <span style="font-size: 1.2em; margin-right: 10px; line-height: 1;">📧</span>
-            <span>awsolutions-id.com</span>
-        </div>
-        
-        <div style="margin-bottom: 30px; font-size: 1.4em; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
-            <span style="font-size: 1.2em; margin-right: 10px; line-height: 1;">📍</span>
-            <span>Makassar - Sulawesi Selatan</span>
-        </div>
-
-        <!-- Tombol WhatsApp -->
-        <a href="https://wa.me/6282187662626" target="_blank" style="display: block; background: linear-gradient(90deg, #25d366, #128c7e); color: #ffffff; padding: 15px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: 600; margin-bottom: 20px; font-family: sans-serif;">
-            CHAT VIA WHATSAPP 1
-        </a>
-        
-        <a href="https://wa.me/6285975153455" target="_blank" style="display: block; background: linear-gradient(90deg, #25d366, #128c7e); color: #ffffff; padding: 15px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: 600; font-family: sans-serif;">
-            CHAT VIA WHATSAPP 2
-        </a>
-    </div>
-</div>
-
-    <!-- ===================================== -->
-    <!-- JAVASCRIPT UNTUK MENU -->
-    <!-- ===================================== -->
+    <title>AW Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        function showSection(sectionId) {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('profile-section').style.display = 'none';
-            document.getElementById('services-section').style.display = 'none';
-            document.getElementById('portfolio-section').style.display = 'none';
-            document.getElementById('contact-section').style.display = 'none';
-
-            var links = document.querySelectorAll('.nav-links a');
-            links.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            document.getElementById(sectionId + '-section').style.display = 'block';
-
-            var clickedLink = document.querySelector('.nav-links a[onclick="showSection(\'' + sectionId + '\')"]');
-            if (clickedLink) {
-                clickedLink.classList.add('active');
-            }
-        }
-
-        window.onload = function() {
-            document.getElementById('home-section').style.display = 'block';
-            var homeLink = document.querySelector('.nav-links a[onclick="showSection(\'home\')"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C21807',
+                        secondary: '#263238',
+                        dark: '#212121',
+                        light: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'Arial', 'sans-serif'],
+                    },
+                }
             }
         }
     </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header / Navigasi -->
+    <header class="bg-secondary text-white py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-primary text-3xl font-bold">AW</span>
+                <span class="text-white text-xl font-medium">Solutions</span>
+            </div>
+            <button class="bg-primary text-white w-10 h-10 rounded-md flex items-center justify-center">
+                <i class="fa fa-bars text-lg"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Bagian Utama -->
+    <section class="grid grid-cols-1 lg:grid-cols-3">
+        <!-- Kolom Utama -->
+        <div class="lg:col-span-2 relative bg-secondary text-white overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1526925539332-aa3e518d3453?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                     alt="Background Keyboard" 
+                     class="w-full h-full object-cover opacity-50">
+            </div>
+            <div class="relative z-10 p-12 md:p-16 text-shadow">
+                <h1 class="text-[clamp(1.8rem,5vw,3rem)] font-bold mb-4">
+                    AW SOLUTIONS
+                </h1>
+                <p class="text-[clamp(1rem,2.5vw,1.4rem)] mb-8 max-w-2xl">
+                    Jasa Tugas PKN PKA PKP | Pengetikan Desain & Cetak<br>
+                    Solusi terpercaya dokumen berkualitas tinggi
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#layanan" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg">
+                        Lihat Layanan Saya
+                    </a>
+                    <a href="#kontak" class="bg-transparent hover:bg-white/10 border border-white text-white font-medium py-3 px-8 rounded-full transition-all duration-300">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom Samping: Portofolio -->
+        <div class="bg-light p-6 border-l border-gray-200">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Hasil Karya & Portofolio</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4">
+                <!-- 10 Kotak Portofolio -->
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+                <div class="aspect-square bg-white border border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Layanan & Profil -->
+    <section class="grid grid-cols-1 lg:grid-cols-3">
+        <!-- Kolom Utama: Layanan & Profil -->
+        <div class="lg:col-span-2 p-8 bg-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Layanan Unggulan</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Layanan 1 -->
+                        <div class="bg-light p-6 rounded-lg text-center hover:shadow-md transition-shadow duration-300">
+                            <i class="fa fa-file-text-o text-3xl text-gray-700 mb-3 block"></i>
+                            <h3 class="font-medium text-gray-800">Tugas PKN</h3>
+                        </div>
+                        <!-- Layanan 2 -->
+                        <div class="bg-light p-6 rounded-lg text-center hover:shadow-md transition-shadow duration-300">
+                            <i class="fa fa-file-text-o text-3xl text-gray-700 mb-3 block"></i>
+                            <h3 class="font-medium text-gray-800">Tugas PKA</h3>
+                        </div>
+                        <!-- Layanan 3 -->
+                        <div class="bg-light p-6 rounded-lg text-center hover:shadow-md transition-shadow duration-300">
+                            <i class="fa fa-file-image-o text-3xl text-gray-700 mb-3 block"></i>
+                            <h3 class="font-medium text-gray-800">Tugas PKP</h3>
+                        </div>
+                        <!-- Layanan 4 -->
+                        <div class="bg-light p-6 rounded-lg text-center hover:shadow-md transition-shadow duration-300">
+                            <i class="fa fa-print text-3xl text-gray-700 mb-3 block"></i>
+                            <h3 class="font-medium text-gray-800">Desain & Cetak</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-primary border-b-2 border-primary inline-block">Profil Kami</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kami adalah penyedia jasa profesional yang berfokus pada penyusunan dokumen, pengetikan, desain, dan percetakan. Berpengalaman dalam menangani kebutuhan tugas Diklat PKN, PKA, maupun PKP dengan kualitas terbaik dan ketepatan waktu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom Samping: Kontak -->
+        <div class="bg-secondary text-white p-8">
+            <h2 class="text-2xl font-bold mb-6">Hubungi Kami</h2>
+            <div class="space-y-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <i class="fa fa-whatsapp text-xl text-green-400"></i>
+                    <span>0821 8766 2626</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa fa-whatsapp text-xl text-green-400"></i>
+                    <span>0859 7515 3455</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa fa-map-marker text-xl text-gray-300"></i>
+                    <span>Makassar, Sulawesi Selatan</span>
+                </div>
+            </div>
+            <div class="w-full h-10 bg-gray-400/30 rounded-md"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-6 px-4 text-center">
+        <p>Copyright &copy; 2024 AW Solutions. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
