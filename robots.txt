@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Lokasi berkas peta situs (sitemap) Anda
-Sitemap: https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/sitemap.xml
+Sitemap: https://awsolutions-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/sitemap.xml
 
 # Larangan mengakses berkas atau folder tertentu (jika ada, saat ini dikosongkan)
 # Disallow: /admin/
