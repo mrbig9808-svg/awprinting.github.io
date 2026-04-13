@@ -1,44 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Halaman Utama / Beranda -->
   <url>
-    <loc>https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <loc>https://awsolutions-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/</loc>
+    <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Halaman Profil -->
   <url>
-    <loc>https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#profil</loc>
-    <lastmod>2026-04-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Halaman Layanan -->
-  <url>
-    <loc>https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#layanan</loc>
-    <lastmod>2026-04-12</lastmod>
+    <loc>https://awsolutions-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#layanan</loc>
+    <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Halaman Portofolio -->
   <url>
-    <loc>https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#portofolio</loc>
-    <lastmod>2026-04-12</lastmod>
+    <loc>https://awsolutions-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#portofolio</loc>
+    <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Halaman Kontak -->
   <url>
-    <loc>https://ons-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#kontak</loc>
-    <lastmod>2026-04-12</lastmod>
+    <loc>https://awsolutions-id.github.io/jasa-tugas-diklat-pkn-pka-pkp/#kontak</loc>
+    <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>
