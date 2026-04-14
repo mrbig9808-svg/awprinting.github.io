@@ -98,40 +98,49 @@
 
     <main class="container mx-auto">
         
-        <!-- HALAMAN BERANDA - KEMBALI KE TAMPILAN AWAL DENGAN TAMBAHAN TEKS -->
-<section id="beranda" class="page-content py-12 px-4 relative min-h-screen flex flex-col justify-center items-center text-center bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/ions-id/ions-id.github.io/main/assets/images/bg-home.jpg');">
-    <div class="absolute inset-0 bg-black/40"></div>
-    
-    <div class="relative z-10 w-full max-w-3xl mx-auto">
-        <div class="flex flex-col items-center justify-center mb-8">
-            <img src="https://raw.githubusercontent.com/ions-id/ions-id.github.io/main/assets/images/logo.png" alt="Logo AW Solutions" class="w-24 h-24 rounded-full mb-4">
-            <h1 class="text-[clamp(2rem,8vw,3.2rem)] font-bold text-white">
-                <span class="text-red-600">AW</span> Solutions
-            </h1>
+        <!-- HALAMAN BERANDA - KEMBALI KE AWAL -->
+<section id="beranda" class="page-content active">
+    <div class="relative bg-secondary text-white">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="Laptop 01.jpg" 
+                alt="Background Layanan Jasa Tugas Diklat PKN, PKA, PKP" 
+                class="w-full h-full object-cover object-center opacity-50"
+            >
         </div>
-
-        <h2 class="text-[clamp(1.8rem,7vw,2.8rem)] font-black text-white mb-8">Jasa Tugas Diklat</h2>
-
-        <ul class="space-y-6 mb-10 text-left max-w-lg mx-auto">
-            <li class="flex items-start gap-3 text-[clamp(1.2rem,5vw,1.6rem)] text-white">
-                <span class="font-bold">-</span>
-                <span><span class="text-red-600 font-semibold">PKN</span> (Pelatihan Kepemimpinan Nasional) Tingkat II dan Tingkat I</span>
-            </li>
-            <li class="flex items-start gap-3 text-[clamp(1.2rem,5vw,1.6rem)] text-white">
-                <span class="font-bold">-</span>
-                <span><span class="text-red-600 font-semibold">PKA</span> (Pelatihan Kepemimpinan Administrator)</span>
-            </li>
-            <li class="flex items-start gap-3 text-[clamp(1.2rem,5vw,1.6rem)] text-white">
-                <span class="font-bold">-</span>
-                <span><span class="text-red-600 font-semibold">PKP</span> (Pelatihan Kepemimpinan Pengawas)</span>
-            </li>
-        </ul>
-
-        <h3 class="text-[clamp(1.6rem,6vw,2.2rem)] font-bold text-white mt-12">Pengetikan, Desain & Cetak</h3>
-        <p class="text-gray-200 text-[clamp(1rem,4vw,1.3rem)] mt-3">solusi terpercaya dokumen berkualitas tinggi</p>
+        <div class="relative z-10 p-4 md:p-6 text-shadow min-h-[85vh] h-full flex flex-col justify-center items-center text-center pt-16 md:pt-20">
+            <!-- Logo -->
+            <div class="flex flex-col items-center mb-4">
+                <img src="AW SOLUTIONS Logo.jpg" alt="Logo AW Solutions - Jasa Tugas Diklat" class="w-12 h-12 rounded-full object-cover mb-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-primary text-xl font-black">AW</span>
+                    <span class="text-white text-lg font-bold">Solutions</span>
+                </div>
+            </div>
+            
+            <h1 class="text-[clamp(1.8rem,8vw,3rem)] font-black mb-3 text-white leading-tight">
+                Jasa Tugas Diklat<br>PKN, PKA, PKP
+            </h1>
+            
+            <p class="text-[clamp(1.3rem,5vw,1.8rem)] mb-2 max-w-3xl text-white font-bold leading-relaxed">
+                Pengetikan, Desain & Cetak
+            </p>
+            <p class="text-[clamp(0.9rem,3vw,1.2rem)] mb-6 max-w-2xl text-white font-normal leading-relaxed lowercase">
+                solusi terpercaya dokumen berkualitas tinggi
+            </p>
+            
+            <div class="flex flex-col gap-3 justify-center w-full max-w-xs">
+                <a href="#" onclick="changePage('layanan')" class="bg-primary hover:bg-primary/90 text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 shadow-lg text-lg">
+                    Layanan Kami
+                </a>
+                <a href="#" onclick="changePage('kontak')" class="bg-transparent hover:bg-white/10 border-2 border-white text-white font-bold py-1.5 px-6 rounded-full transition-all duration-300 text-lg">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
     </div>
-</section>
-           
+</section>  
+        
     <!-- Halaman Profil -->
         <section id="profil" class="page-content py-6 px-3">
             <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md">
