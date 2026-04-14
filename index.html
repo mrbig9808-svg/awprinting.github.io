@@ -48,9 +48,11 @@
     <style>
       .content-auto {content-visibility:auto;}
       .text-shadow {text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+      /* HANYA tampilkan halaman yang aktif */
       .page-content {display:none;}
       .page-content.active {display:block;}
-      .menu-link.active {border-bottom:3px solid #C21807; font-weight:bold;}
+      /* Gaya menu: Garis bawah putih */
+      .menu-link.active {border-bottom:3px solid #ffffff; font-weight:bold;}
       .service-link {text-decoration:none; color:inherit; display:block;}
       .list-item-custom {display:flex; align-items:flex-start;}
       .list-item-custom i {margin-top:0.25rem; flex-shrink:0;}
@@ -59,19 +61,27 @@
       .hero-container {
           min-height: 100vh;
       }
-      /* Agar posisi hak cipta tetap di bawah */
+      /* Agar posisi hak cipta tetap di bawah dan tidak mengganggu */
       html, body {
           height: 100%;
+          margin: 0;
+          padding: 0;
       }
       body {
           display: flex;
           flex-direction: column;
+          background-color: #f3f4f6;
       }
       main {
           flex: 1 0 auto;
       }
       footer {
           flex-shrink: 0;
+          display: none; /* Disembunyikan otomatis di halaman beranda */
+      }
+      /* Tampilkan footer hanya di halaman dalam */
+      body.inner-page footer {
+          display: block;
       }
     </style>
     
@@ -82,10 +92,10 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-    <main class="container mx-auto p-0">
+    <main class="w-full">
         
         <!-- ==================================================
-        HALAMAN BERANDA - 100% SESUAI CONTOH GAMBAR
+        HALAMAN BERANDA - DIPERBAIKI SESUAI SCREENSHOT
         =================================================== -->
 <section id="beranda" class="page-content active">
     <div class="relative hero-container w-full overflow-hidden" style="font-family: 'Arial', 'Helvetica', 'sans-serif;">
@@ -104,11 +114,11 @@
 
         <div class="relative z-20 w-full min-h-screen flex flex-col justify-between p-4 pt-6 pb-8">
             
-            <!-- MENU NAVIGASI BARU (SATU-SATUNYA, SESUAI GAMBAR) -->
-            <div class="flex justify-around text-xl font-bold text-gold">
-                <a href="#" class="border-b-2 border-gold pb-2 px-1" onclick="changePage('beranda')">Beranda</a>
-                <a href="#" class="pb-2 px-1" onclick="changePage('profil')">Profil</a>
-                <a href="#" class="pb-2 px-1" onclick="changePage('portofolio')">Portofolio</a>
+            <!-- MENU NAVIGASI: Latar Transparan & Garis Bawah Putih -->
+            <div class="flex justify-around text-xl font-bold text-gold bg-transparent py-2">
+                <a href="#" class="menu-link border-b-2 border-white pb-2 px-1" onclick="changePage('beranda', event)">Beranda</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('profil', event)">Profil</a>
+                <a href="#" class="menu-link pb-2 px-1" onclick="changePage('portofolio', event)">Portofolio</a>
             </div>
 
 
@@ -127,7 +137,7 @@
                     Jasa Tugas Diklat
                 </h1>
 
-                <!-- Daftar Layanan -->
+                <!-- Daftar Layanan: POSISI DISESUAIKAN -->
                 <div class="text-left w-full max-w-xs mt-4 space-y-5">
                     <!-- PKN -->
                     <div class="flex items-start gap-3">
@@ -142,7 +152,10 @@
                                     <path d="M12 12v9" />
                                     <path d="M12 12l-8 -4.5" />
                                 </svg>
-                                <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Nasional<br><span class="text-sm font-normal">Tk. II dan Tk. I</span></p>
+                                <div>
+                                    <p class="text-white text-base font-semibold">Pelatihan Kepemimpinan Nasional</p>
+                                    <p class="text-white text-sm font-normal">Tk. II dan Tk. I</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -190,12 +203,12 @@
                 <h2 class="text-xl font-bold text-gold tracking-wide">Pengetikan, Desain & Cetak</h2>
                 <p class="text-gold/80 text-sm font-normal tracking-wide mt-1 mb-6">solusi terpercaya dokumen berkualitas tinggi</p>
 
-                <!-- TOMBOL (ADA & SESUAI CONTOH) -->
+                <!-- TOMBOL -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                    <a href="#" onclick="changePage('layanan')" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
+                    <a href="#" onclick="changePage('layanan', event)" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
                         Layanan Kami
                     </a>
-                    <a href="#" onclick="changePage('kontak')" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
+                    <a href="#" onclick="changePage('kontak', event)" class="border-2 border-white text-white py-2 px-8 rounded-full text-base font-bold tracking-tight bg-[#051a44]/40 hover:bg-[#051a44]/60 transition-all min-w-[160px]">
                         Hubungi Kami
                     </a>
                 </div>
@@ -231,7 +244,8 @@
                 <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Layanan Unggulan <br><span class="text-lg text-gray-600">Khusus Jasa Tugas Diklat PKN, PKA, PKP</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Layanan PKN -->
-                    <div id="layanan-pkn" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
+                    <div id
+                        layanan-pkn" class="bg-light p-4 rounded-lg hover:shadow-lg transition-shadow duration-300 border">
                         <i class="fa fa-book text-2xl text-gray-700 mb-2 block text-center"></i>
                         <h3 class="font-bold text-gray-800 text-center mb-3 text-lg">Tugas Diklat PKN</h3>
                         <ul class="text-base text-gray-600 space-y-2 text-left font-bold pl-2">
@@ -248,8 +262,7 @@
                                 <span>Tugas Individu Observasi Lapangan (OL)</span>
                             </li>
                             <li class="list-item-custom">
-                                <i class="fa fa-check-circle text-green
-                                  -500 mr-2"></i>
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
                                 <span>Rancangan Proyek Perubahan</span>
                             </li>
                             <li class="list-item-custom">
@@ -393,8 +406,8 @@
                 </div>
             </div>
     </section>
-            <!-- Halaman Portofolio -->
-        <section id="portofolio" class="page-content py-6 px-3">
+         <!-- Halaman Portofolio -->
+    <section id="portofolio" class="page-content py-6 px-3">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Hasil Karya Kami</h2>
                 <p class="text-center text-gray-700 mb-8 font-bold text-base">Berikut adalah beberapa contoh dokumen dan desain yang pernah kami kerjakan untuk kebutuhan <strong>Jasa Tugas Diklat PKN, PKA, maupun PKP</strong>:</p>
@@ -432,8 +445,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Halaman Kontak -->
+                <!-- Halaman Kontak -->
         <section id="kontak" class="page-content py-6 px-3">
             <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg shadow-md">
                 <h2 class="text-xl font-black mb-5 text-gray-800 text-center">Hubungi Kami</h2>
@@ -466,7 +478,8 @@
                     
                     <div>
                         <h3 class="text-base font-bold mb-3 text-gray-700">Kirim Pesan</h3>
-                        <form class="space-y-2 font-bold text-base">
+
+                                                <form class="space-y-2 font-bold text-base">
                             <div>
                                 <label class="block text-gray-600 mb-1">Nama Lengkap</label>
                                 <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Nama Anda">
@@ -475,17 +488,7 @@
                                 <label class="block text-gray-600 mb-1">Nomor WhatsApp</label>
                                 <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Nomor yang bisa dihubungi">
                             </div>
-                                                        <div>
-                                <label class="block text-gray-600 mb-1">Pesan / Keterangan Tugas</label>
-                                <textarea rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tuliskan kebutuhan Jasa Tugas Diklat PKN, PKA, atau PKP yang Anda butuhkan"></textarea>
-                            </div>
-                            <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-all duration-300 font-bold w-full">Kirim Pesan</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-                                    <div>
+                            <div>
                                 <label class="block text-gray-600 mb-1">Pesan / Keterangan Tugas</label>
                                 <textarea rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tuliskan kebutuhan Jasa Tugas Diklat PKN, PKA, atau PKP yang Anda butuhkan"></textarea>
                             </div>
@@ -505,7 +508,10 @@
 
     <!-- Skrip JavaScript untuk Navigasi Halaman -->
     <script>
-        function changePage(pageName) {
+        function changePage(pageName, event) {
+            // Cegah default aksi tautan
+            event.preventDefault();
+
             // Sembunyikan semua halaman
             const semuaHalaman = document.querySelectorAll('.page-content');
             semuaHalaman.forEach(halaman => {
@@ -523,6 +529,13 @@
             
             // Tandai menu yang sedang aktif
             event.target.classList.add('active');
+
+            // Tambah/Hapus kelas pada body untuk mengatur tampilan footer
+            if (pageName === 'beranda') {
+                document.body.classList.remove('inner-page');
+            } else {
+                document.body.classList.add('inner-page');
+            }
             
             // Gulir ke bagian paling atas halaman
             window.scrollTo(0, 0);
