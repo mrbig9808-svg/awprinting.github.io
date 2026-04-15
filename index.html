@@ -51,7 +51,7 @@
       /* Kotak hak cipta: Lebar penuh tanpa batas */
       .copyright-container {background: rgba(10, 36, 99, 0.6); padding: 12px 0; width: 100%; margin: 1rem 0 0 0;}
       
-      /* --- PENGATURAN KHUSUS LANDSCAPE (TETAP SAMA / TIDAK BERUBAH) --- */
+      /* --- PENGATURAN KHUSUS LANDSCAPE (DIPERBAIKI AGAR TIDAK TURUN TERLALU JAUH) --- */
       @media (orientation: landscape) {
           .menu-link {font-size: 14px;}
           .text-[clamp(1.6rem,7vw,2.2rem)] {font-size: clamp(1.4rem, 5vw, 1.8rem) !important;}
@@ -67,11 +67,15 @@
           .copyright-container {padding: 10px 0;}
           .copyright-container p {font-size: 0.7rem !important; white-space: nowrap; text-align: center !important;}
           .copyright-container br {display: none;}
-          .daftar-pendidikan {margin-top: 2rem !important;} 
-          .garis-pemisah {margin-top: 1.5rem !important; margin-bottom: 1rem !important;}
+          /* Jarak diatur agar tidak terlalu renggang */
+          .daftar-pendidikan {margin-top: 1.5rem !important; margin-bottom: 0 !important;} 
+          .garis-pemisah {margin-top: 0.3rem !important; margin-bottom: 0.5rem !important;}
+          .bagian-judul-bawah {margin-top: 0 !important; margin-bottom: 0.2rem !important;}
+          .bagian-deskripsi-bawah {margin-top: 0.1rem !important; margin-bottom: 0.75rem !important;}
+          .tombol-bawah {margin-bottom: 1rem !important;}
       }
       
-      /* --- PENGATURAN KHUSUS POTRAIT (DISESUAIKAN SESUAI PERMINTAAN TERBARU) --- */
+      /* --- PENGATURAN KHUSUS POTRAIT (GARIS SUDAH NAIK SESUAI ARAHAN) --- */
       @media (orientation: portrait) {
           .w-16 {width: 3.2rem !important; height: 3.2rem !important;}
           .mt-4 {margin-top: 0.75rem !important;}
@@ -85,12 +89,11 @@
           .copyright-container p {font-size: 0.75rem !important; line-height: 1.5; text-align: center !important;}
           .copyright-container br {display: inline;}
 
-          /* 1. PKN-PKA-PKP & Garis: Dinaikkan JAUH SESUAI PERMINTAAN */
+          /* 1. PKN-PKA-PKP & Garis: Dinaikkan mendekati teks */
           .daftar-pendidikan {margin-top: 1rem !important; margin-bottom: 0 !important;} 
-          /* Ini saya turunkan margin bawah daftar dan naikkan margin atas garisnya drastis */
           .garis-pemisah {margin-top: 0.1rem !important; margin-bottom: 0.5rem !important;}
 
-          /* 2. Bagian Pengetikan & Solusi */
+          /* 2. Bagian Pengetikan & Solusi: Tetap pas */
           .bagian-judul-bawah {margin-top: 0 !important; margin-bottom: 0.3rem !important;}
           .bagian-deskripsi-bawah {margin-top: 0.1rem !important; margin-bottom: 1rem !important;}
           .tombol-bawah {margin-bottom: 1.25rem !important;}
@@ -134,7 +137,7 @@
                     Jasa Tugas Diklat
                 </h1>
 
-                <!-- DAFTAR PKN - PKA - PKP: SUDAH DIPERPENDEKAT KE GARIS -->
+                <!-- DAFTAR PKN - PKA - PKP -->
                 <div class="text-left w-full max-w-xs daftar-pendidikan flex flex-col gap-3">
                     <!-- PKN -->
                     <div class="flex items-start gap-3">
@@ -193,9 +196,9 @@
                 </div>
             </div>
 
-            <!-- Bagian Bawah Beranda: GARIS SUDAH DINAIKKAN -->
+            <!-- Bagian Bawah Beranda: GARIS SUDAH DIATUR DI KEDUA MODE -->
             <div class="text-center mb-3 px-3">
-                <!-- POSISI GARIS SUDAH DINAIKKAN KE ATAS -->
+                <!-- POSISI GARIS SUDAH DIATUR AGAR PAS DI POTRAIT DAN LANDSCAPE -->
                 <hr class="border-gold/40 w-3/4 mx-auto garis-pemisah">
                 
                 <!-- 2. Bagian Pengetikan & Solusi -->
@@ -219,8 +222,8 @@
         </div>
     </div>
 </section>
-
-            <!-- Halaman Profil -->
+                                
+     <!-- Halaman Profil -->
     <section id="profil" class="page-content">
         <div class="relative min-h-screen h-auto">
             <div class="menu-container">
