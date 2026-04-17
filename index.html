@@ -29,7 +29,7 @@
             --warna-emas: #FFD700;
         }
 
-        /* NAVBAR */
+        /* NAVBAR - TETAP SEMUA DI ATAS */
         .navbar {
             background-color: var(--warna-biru);
             padding: 12px 5px;
@@ -57,7 +57,7 @@
             border-bottom: 3px solid white;
         }
 
-        /* BACKGROUND */
+        /* BACKGROUND - TANPA LAPISAN */
         .hero-section {
             background-image: url('Latar Mengetik 01.jpg');
             background-size: cover;
@@ -98,12 +98,11 @@
             white-space: nowrap;
         }
 
-        /* BAGIAN ISI - JARAK DIPERPENDEK */
         .item-layanan {
             color: white;
             font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            line-height: 1.5; /* DIKECILKAN AGAR RAPI */
-            margin-bottom: 8px; /* JARAK ANTAR BARIS DIATUR */
+            line-height: 1.5;
+            margin-bottom: 8px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -111,7 +110,7 @@
         }
 
         .bottom-section {
-            margin-top: 20px; /* DIUBAH AGAR NAIK KE ATAS */
+            margin-top: 20px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -119,7 +118,19 @@
             padding-bottom: 0px;
         }
 
-        /* HAK CIPTA DITURUNKAN */
+        /* TOMBOL DIPERKECIL */
+        .tombol-mulai {
+            background-color: white;
+            color: var(--warna-biru);
+            padding: 8px 22px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
         .copyright {
             color: white;
             font-size: 0.8rem;
@@ -170,7 +181,7 @@
                 </p>
 
                 <a href="layanan.html" style="text-decoration: none;">
-                    <button style="background-color: white; color: var(--warna-biru); padding: 10px 25px; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+                    <button class="tombol-mulai">
                         Mulai Sekarang
                     </button>
                 </a>
