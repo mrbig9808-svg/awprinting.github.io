@@ -23,13 +23,12 @@
             width: 100%;
         }
 
-        /* WARNA SESUAI HALAMAN LAYANAN */
         :root {
             --warna-biru: #002B5B;
             --warna-emas: #F5D061;
         }
 
-        /* NAVBAR - UKURAN FONT DIATUR AGAR SEMUA MUNCUL LENGKAP */
+        /* NAVBAR - UKURAN FONT DIKECILKAN AGAR SEMUA MUAT */
         .navbar {
             background-color: var(--warna-biru);
             padding: 12px 5px;
@@ -44,8 +43,8 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 8px;
-            font-size: 1rem; /* UKURAN PAS BIAR MUAT */
+            margin: 0 6px; /* Jarak diperketat */
+            font-size: 0.95rem; /* Ukuran pas biar masuk semua */
             font-weight: 500;
             padding-bottom: 5px;
             border-bottom: 3px solid transparent;
@@ -57,7 +56,6 @@
             border-bottom: 3px solid white;
         }
 
-        /* BACKGROUND DENGAN LAPISAN BIRU TUA MERATA */
         .hero-section {
             background-image: url('Latar Mengetik 01.jpg');
             background-size: cover;
@@ -82,7 +80,6 @@
             z-index: 1;
         }
 
-        /* KONTEN UTAMA */
         .content-wrapper {
             position: relative;
             z-index: 2;
@@ -97,7 +94,6 @@
             min-height: 100%;
         }
 
-        /* LOGO KECIL */
         .logo-small {
             color: white;
             font-size: 0.9rem;
@@ -105,7 +101,6 @@
             margin-bottom: 15px;
         }
 
-        /* BAGIAN BAWAH */
         .bottom-section {
             margin-top: auto;
             width: 100%;
@@ -115,28 +110,26 @@
             padding-bottom: 0px;
         }
 
-        /* STYLE HAK CIPTA - DITURUNKAN JAUH */
+        /* HAK CIPTA DITURUNKAN SANGAT JAUH */
         .copyright {
             color: white;
             font-size: 0.8rem;
-            margin-top: 30px; /* DITAMBAH BANYAK AGAR TURUN JAUH */
-            margin-bottom: 30px; /* DITAMBAH AGAR ADA JARAK DARI BAWAH LAYAR */
+            margin-top: 35px;
+            margin-bottom: 40px; /* Ditambah banyak biar turun sampai bawah */
             opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR MENU -->
     <div class="navbar">
         <a href="#" class="active">Beranda</a>
         <a href="#">Profil</a>
         <a href="#">Layanan</a>
-        <href="#">Portofolio</a>
+        <a href="#">Portofolio</a>
         <a href="#">Kontak</a>
     </div>
 
-    <!-- HERO SECTION -->
     <div class="hero-section">
         <div class="content-wrapper">
             
@@ -170,11 +163,9 @@
                     </button>
                 </a>
 
-                <!-- HAK CIPTA SUDAH DITURUNKAN -->
                 <div class="copyright">
                     &copy; 2026 AW Solutions - All Rights Reserved
                 </div>
-
             </div>
 
         </div>
