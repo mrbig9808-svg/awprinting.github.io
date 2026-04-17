@@ -21,7 +21,6 @@
             font-family: 'Poppins', Arial, sans-serif;
             overflow-x: hidden;
             width: 100%;
-            height: 100%;
         }
 
         /* WARNA SESUAI HALAMAN LAYANAN */
@@ -30,24 +29,28 @@
             --warna-emas: #F5D061;
         }
 
-        /* NAVBAR */
+        /* NAVBAR - DIATUR AGAR TIDAK TERPOTONG */
         .navbar {
             background-color: var(--warna-biru);
-            padding: 15px 0;
+            padding: 15px 10px;
             position: relative;
             z-index: 3;
             width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap; /* Agar tetap sejajar */
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 1.2rem;
+            margin: 0 10px;
+            font-size: 1.1rem; /* Sedikit dikecilkan biar muat */
             font-weight: 500;
             padding-bottom: 5px;
             border-bottom: 3px solid transparent;
             transition: 0.3s;
+            white-space: nowrap; /* Agar tulisan tidak pecah baris */
         }
 
         .navbar a.active {
@@ -100,12 +103,20 @@
             font-weight: bold;
             margin-bottom: 25px;
         }
+
+        /* STYLE HAK CIPTA */
+        .copyright {
+            color: white;
+            font-size: 0.8rem;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR MENU -->
-    <div class="navbar flex justify-center">
+    <!-- NAVBAR MENU SUDAH LENGKAP TIDAK TERPOTONG -->
+    <div class="navbar">
         <a href="#" class="active">Beranda</a>
         <a href="#">Profil</a>
         <a href="#">Layanan</a>
@@ -117,15 +128,12 @@
     <div class="hero-section">
         <div class="content-wrapper">
             
-            <!-- LOGO AW SOLUTIONS KECIL -->
             <div class="logo-small">AW Solutions</div>
 
-            <!-- JUDUL UTAMA -->
             <h1 style="color: white; font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; margin-bottom: 30px; white-space: nowrap;">
                 Jasa Tugas Diklat
             </h1>
 
-            <!-- DAFTAR JASA DENGAN ICON -->
             <p style="color: white; font-size: clamp(0.9rem, 2.5vw, 1.2rem); max-width: 90%; line-height: 1.8; margin-bottom: 40px;">
                 <i class="fas fa-th-large" style="color: var(--warna-emas); margin-right: 8px;"></i>
                 PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I
@@ -137,20 +145,20 @@
                 PKP Pelatihan Kepemimpinan Pengawas
             </p>
 
-            <!-- KALIMAT PENUTUP DI ATAS TOMBOL (UKURAN KECIL) -->
             <p style="color: white; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5;">
                 Solusi Pengetikan Desain dan Cetak untuk Kebutuhan Tugas Diklat Anda
             </p>
 
-            <!-- TOMBOL DIKECILKAN -->
             <a href="layanan.html" style="text-decoration: none;">
                 <button style="background-color: white; color: var(--warna-biru); padding: 10px 25px; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
                     Mulai Sekarang
                 </button>
             </a>
 
-            <!-- RUANG UNTUK HAK CIPTA -->
-            <div style="margin-top: 50px;"></div>
+            <!-- TULISAN HAK CIPTA -->
+            <div class="copyright">
+                &copy; 2026 AW Solutions - All Rights Reserved
+            </div>
 
         </div>
     </div>
