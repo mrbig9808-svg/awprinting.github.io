@@ -221,7 +221,7 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px;
-            padding-top: 60px;
+            padding-top: 20px; /* Jarak dari atas dikurangi agar konten dekat menu */
             box-sizing: border-box;
         }
         .hero-overlay {
@@ -239,29 +239,29 @@
             text-align: center;
             width: 100%;
         }
-        /* TULISAN AW SOLUTIONS - WARNA KUNING, UKURAN FONT TETAP */
+        /* TULISAN AW SOLUTIONS - WARNA KUNING */
         .logo-small {
             color: #FFD700;
             font-size: 1.3rem;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        /* TULISAN JASA TUGAS DIKLAT - WARNA BIRU DENGAN SHADOW PUTIH, UKURAN FONT TETAP */
+        /* TULISAN JASA TUGAS DIKLAT - WARNA BIRU DENGAN SHADOW PUTIH */
         .judul-utama {
             color: #002B5B;
             font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 900;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 
                          1px 1px 3px rgba(255, 255, 255, 0.7);
         }
-        /* TULISAN ITEM LAYANAN - UKURAN FONT TETAP */
+        /* TULISAN ITEM LAYANAN - WARNA PUTIH, POSISI NAIK */
         .item-layanan {
-            color: #000000;
+            color: #ffffff;
             font-size: clamp(1rem, 3vw, 1.3rem);
-            line-height: 1.8;
-            margin-bottom: 12px;
+            line-height: 1.6;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -269,7 +269,7 @@
             margin-left: auto;
             margin-right: auto;
             text-align: left;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
         .item-layanan i {
             color: #FFD700;
@@ -280,17 +280,17 @@
             flex-shrink: 0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
-        /* TULISAN DESKRIPSI - HANYA INI YANG DIPERKECIL UKURANNYA */
+        /* TULISAN DESKRIPSI - WARNA PUTIH */
         .deskripsi {
-            color: #000000;
-            font-size: clamp(0.85rem, 2vw, 1rem); /* Hanya ukuran ini yang diperkecil */
-            margin: 20px auto;
-            line-height: 1.6;
+            color: #ffffff;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            margin: 15px auto;
+            line-height: 1.5;
             max-width: 500px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
-        /* TOMBOL MULAI SEKARANG - UKURAN FONT TETAP, POSISI DIANGKAT */
+        /* TOMBOL MULAI SEKARANG - POSISI NAIK DEKAT DESKRIPSI */
         .tombol-mulai {
             background-color: white;
             color: #000000;
@@ -302,13 +302,13 @@
             cursor: pointer;
             white-space: nowrap;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            margin-top: 10px;
+            margin-top: 5px;
         }
-        /* COPYRIGHT - UKURAN FONT TETAP, POSISI DIANGKAT */
+        /* COPYRIGHT - DINAINKAN SEDIKIT LAGI */
         .copyright {
             color: #ffffff;
             font-size: 0.9rem;
-            margin-top: 20px;
+            margin-top: 12px; /* Jarak atas dikurangi lagi agar naik */
             opacity: 0.95;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
@@ -359,7 +359,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- ============================================== -->
     <!-- HALAMAN PROFIL -->
     <!-- ============================================== -->
