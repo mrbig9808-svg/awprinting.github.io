@@ -850,7 +850,7 @@
             sidebar.classList.toggle('active');
         }
 
-        // FUNGSI PINDAH HALAMAN
+        // FUNGSI PINDAH HALAMAN - SUDAH DIPERBAIKI AGAR MENU TETAP DI ATAS
         function showPage(pageId) {
             // Sembunyikan semua halaman
             const pages = document.querySelectorAll('.page-content');
@@ -861,16 +861,10 @@
             // Tampilkan halaman yang dipilih
             document.getElementById(pageId).classList.add('active');
             
-            // Update menu aktif di menu utama
-            const links = document.querySelectorAll('.navbar a');
-            links.forEach(link => {
-                link.classList.remove('active');
-            });
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
+            // HAPUS BAGIAN YANG MENYEBABKAN HALAMAN NAIK
+            // Tidak ada lagi perubahan posisi atau scroll ke atas
             
-            // Update menu aktif di menu samping
+            // Update status menu yang aktif
             const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
             sidebarLinks.forEach(link => {
                 link.classList.remove('active');
@@ -879,7 +873,7 @@
                 event.currentTarget.classList.add('active');
             }
             
-            // Tutup menu samping setelah memilih halaman
+            // Tutup menu samping setelah memilih
             toggleMenu();
         }
 
@@ -926,36 +920,60 @@
         }
     </script>
 
-    <!-- STYLE TAMBAHAN UNTUK MENU SAMPING DAN BERANDA -->
+    <!-- STYLE UNTUK MEMASTIKAN MENU DAN LOGO TETAP DI ATAS -->
     <style>
-        /* STYLE UNTUK MENU GARIS 3 */
+        /* Navbar (tempat logo dan menu) DIPERBAIKI AGAR TETAP DI ATAS */
         .navbar {
-            position: relative;
+            position: fixed !important; /* Tetap menempel di atas */
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important; /* Paling atas, tidak tertutup halaman lain */
+            background-color: #002B5B !important;
+            padding: 12px 20px !important;
+            height: 65px !important;
+            border-bottom: 3px solid #FFD700 !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
         }
+
+        /* Beri jarak atas ke konten halaman agar tidak tertutup navbar */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.5s;
+            margin-top: 65px !important; /* Sama dengan tinggi navbar */
+            min-height: calc(100vh - 65px) !important;
+            padding: 0 !important;
+        }
+        .page-content.active {
+            display: block;
+        }
+
+        /* STYLE MENU GARIS 3 */
         .menu-toggle {
             color: #FFD700;
             font-size: 1.8rem;
             cursor: pointer;
             transition: 0.3s;
             pointer-events: auto;
-            z-index: 1000;
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+            z-index: 10000;
         }
         .menu-toggle:hover {
             color: white;
         }
+
+        /* MENU SAMPING */
         .sidebar-menu {
             position: fixed;
-            top: 65px;
+            top: 68px;
             right: -180px;
             width: 180px;
             height: auto;
             max-height: 320px;
             background-color: #002B5B;
-            z-index: 999;
+            z-index: 9998;
             transition: right 0.3s ease;
             padding: 15px 0;
             box-shadow: -2px 0 10px rgba(0,0,0,0.2);
@@ -999,88 +1017,124 @@
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            min-height: calc(100vh - 55px);
+            min-height: calc(100vh - 65px);
             width: 100%;
             display: flex;
             flex-direction: column;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
 
         .content-wrapper {
             position: relative;
             z-index: 2;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
             text-align: center;
-            padding: 20px;
             width: 100%;
-        }
-
-        .logo-small {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 20px;
         }
 
         .judul-utama {
-            color: var(--primary);
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 25px;
-            white-space: nowrap;
+            color: #000000;
+            font-size: clamp(2.3rem, 7vw, 3.6rem);
+            font-weight: 900;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9), 
+                         1px 1px 3px rgba(255, 255, 255, 0.7);
         }
 
         .item-layanan {
-            color: white;
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            line-height: 1.5;
-            margin-bottom: 8px;
-            max-width: 600px;
+            color: #ffffff;
+            font-size: clamp(1.6rem, 4.5vw, 2rem);
+            line-height: 1.8;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-align: left;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
 
-        .bottom-section {
-            margin-top: 80px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 0px;
+        .item-layanan i {
+            color: #FFD700;
+            font-size: 1.4rem;
+            margin-right: 10px;
+            width: 35px;
+            text-align: center;
+            flex-shrink: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
 
-        @media screen and (orientation: landscape) {
-            .bottom-section {
-                margin-top: 130px !important;
-            }
+        .deskripsi {
+            color: #ffffff;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin: 75px auto 20px auto;
+            line-height: 1.6;
+            max-width: 550px;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
 
         .tombol-mulai {
             background-color: white;
-            color: var(--primary);
-            padding: 8px 22px;
-            font-size: 1rem;
+            color: #000000;
+            padding: 14px 40px;
+            font-size: 1.2rem;
             font-weight: bold;
             border: none;
-            border-radius: 8px;
+            border-radius: 15px;
             cursor: pointer;
             white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            margin-top: 10px;
         }
 
         .copyright {
-            color: white;
-            font-size: 0.8rem;
-            margin-top: 30px;
-            margin-bottom: 40px;
-            opacity: 0.8;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-top: 60px;
+            opacity: 0.95;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
     </style>
 
 </body>
 </html>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    
+            
+
+        
+        
+        
+        
