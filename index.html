@@ -5,218 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Furnitur</title>
     <style>
-        /* Menggunakan font sans-serif agar mirip dengan gambar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Warna latar belakang abu-abu sangat muda */
+            background-color: #f5f5f5;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Memastikan tinggi halaman minimal setinggi layar */
+            min-height: 100vh;
         }
 
-        /* Container utama untuk menampung konten */
         .main-container {
-            max-width: 600px; /* Batasan lebar agar terlihat rapi seperti di HP */
-            margin: 0 auto; /* Tengah-tengah halaman secara horizontal */
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
-            box-sizing: border-box; /* Padding tidak mempengaruhi lebar elemen */
-            flex: 1; /* Mengisi sisa ruang kosong agar footer terdorong ke bawah */
+            box-sizing: border-box;
+            flex: 1;
         }
 
-        /* Judul Portofolio di bagian atas */
+        /* Judul Portofolio Atas */
         .title {
             text-align: center;
-            color: #0d47a1; /* Warna biru tua */
-            font-size: 36px; /* Ukuran teks judul */
+            color: #0d47a1;
+            font-size: 36px;
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 30px;
         }
 
-        /* Menggunakan grid untuk menata kotak-kotak portofolio */
+        /* Grid 3 Kolom */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Tiga kolom sama lebar */
-            gap: 15px; /* Jarak antar kotak */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px; /* Spasi putih antar kotak dirapatkan */
             margin-bottom: 30px;
         }
 
-        /* Mengatur style untuk setiap kotak portofolio */
+        /* Kotak Portofolio */
         .portfolio-item {
-            border: 2px solid #ffcc00; /* Garis kuning */
-            border-radius: 4px; /* Membuat sudut sedikit melengkung */
+            border: 2px solid #ffcc00;
+            border-radius: 4px;
             background-color: #fff;
             padding: 10px;
             display: flex;
-            flex-direction: column; /* Konten di dalam disusun vertikal */
-            align-items: center; /* Konten rata tengah secara horizontal */
-            box-sizing: border-box; /* Padding tidak mempengaruhi lebar elemen */
-            text-align: center;
-        }
-
-        /* Mengatur style untuk label 'Furnitur X' */
-        .item-label {
-            font-size: 14px; /* Ukuran teks label */
-            color: #333;
-            margin-bottom: 5px; /* Jarak antara label dan foto */
-        }
-
-        /* Mengatur style untuk area foto (placeholder abu-abu) */
-        .photo-placeholder {
-            width: 100%; /* Lebar penuh memenuhi kotak */
-            height: auto;
-            aspect-ratio: 1 / 1; /* Membuat area foto menjadi bentuk persegi */
-            background-color: #ddd; /* Warna abu-abu sebagai placeholder foto */
-            margin-bottom: 10px; /* Jarak antara area foto dan tombol di bawahnya */
-            border-radius: 2px;
-        }
-
-        /* Mengatur style untuk tombol 'Lihat Detail' di bagian bawah */
-        .detail-button {
-            background-color: #ffcc00; /* Warna kuning */
-            color: #000; /* Warna teks hitam */
-            border: none;
-            padding: 10px 15px; /* Padding tombol */
-            text-decoration: none; /* Menghapus garis bawah pada link */
-            font-size: 14px; /* Ukuran teks tombol */
-            font-weight: bold;
-            border-radius: 4px; /* Membuat sudut tombol sedikit melengkung */
-            display: flex; /* Untuk menjaga teks dan ikon mata tetap dalam satu baris */
-            align-items: center; /* Teks dan ikon rata tengah secara vertikal */
-            cursor: pointer;
-            width: 100%; /* Tombol memenuhi lebar kotak */
-            justify-content: center; /* Teks rata tengah secara horizontal */
+            flex-direction: column;
+            align-items: center;
             box-sizing: border-box;
         }
 
-        /* Mengatur style untuk ikon mata di dalam tombol 'Lihat Detail' */
+        /* Area Foto (Tanpa tulisan furnitur di atasnya) */
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #ddd;
+            margin-bottom: 10px;
+            border-radius: 2px;
+        }
+
+        /* Tombol Lihat Detail */
+        .detail-button {
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 5px;
+            box-sizing: border-box;
+        }
+
         .eye-icon {
-            width: 18px; /* Lebar ikon mata */
+            width: 18px;
             height: 18px;
-            margin-right: 5px; /* Jarak antara ikon dan teks 'Lihat Detail' */
+            margin-right: 5px;
         }
 
-        /* Mengatur style untuk footer (kotak biru di bagian paling bawah) */
+        /* Footer Biru Full Lebar */
         footer {
-            background-color: #0d47a1; /* Warna biru tua sesuai gambar */
-            color: #fff; /* Warna teks putih */
-            text-align: center; /* Teks rata tengah */
-            padding: 15px; /* Padding footer */
-            margin-top: auto; /* Memastikan footer selalu berada di bagian paling bawah layar */
+            background-color: #0d47a1;
+            color: #ffcc00;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        /* Mengatur style untuk teks hak cipta di dalam footer */
         footer p {
             margin: 0;
-            font-size: 14px; /* Ukuran teks hak cipta */
-            color: #ffcc00; /* Warna teks hak cipta kuning */
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+
     <div class="main-container">
         <h1 class="title">Portofolio</h1>
 
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 1</div> <div class="photo-placeholder"></div> <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon"> Lihat Detail </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 2</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 3</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 4</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 5</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 6</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 7</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 8</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 9</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 10</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 11</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
-            <div class="portfolio-item">
-                <div class="item-label">Furnitur 12</div>
-                <div class="photo-placeholder"></div>
-                <a href="#" class="detail-button">
-                    <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" alt="Mata" class="eye-icon">
-                    Lihat Detail
-                </a>
-            </div>
+            <script>
+                for (let i = 1; i <= 12; i++) {
+                    document.write(`
+                        <div class="portfolio-item">
+                            <div class="photo-placeholder"></div>
+                            <a href="#" class="detail-button">
+                                <img src="https://img.icons8.com/material-outlined/24/000000/visible.png" class="eye-icon">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
     </div>
 
     <footer>
         <p>Hak Cipta © 2024 Portofolio Furnitur. Semua Hak Dilindungi.</p>
     </footer>
+
 </body>
 </html>
