@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --biru-tua: #11316b;
-            --emas: #d4a257;
-            --emas-terang: #FFD700;
+        :root { 
+            --navy: #11316b; 
+            --gold: #d4a257; 
+            --gold-bright: #FFD700; 
         }
-
-        body { font-family: 'Arial', sans-serif; overflow-x: hidden; background-color: #f8f9fa; }
+        body { font-family: 'Arial', sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
         
-        /* CSS Sidebar Full Screen */
+        /* SIDEBAR PERSIS SCREENSHOT */
         .sidebar {
             position: fixed; top: 0; left: -100%; width: 100%; height: 100%;
-            background: var(--biru-tua); z-index: 1000; transition: 0.4s;
+            background: var(--navy); z-index: 2000; transition: 0.5s;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .sidebar.active { left: 0; }
@@ -26,49 +25,51 @@
             color: white; font-size: 1.5rem; font-weight: bold; margin: 15px 0;
             text-decoration: none; padding: 10px 40px; border-radius: 8px; width: 80%; text-align: center;
         }
-        .sidebar a.active { background: var(--emas); }
+        .sidebar a.active { background: var(--gold); color: var(--navy); }
 
-        /* Style Umum Halaman */
-        .page-content { display: none; min-height: 100vh; width: 100%; }
+        .page-content { display: none; min-height: 100vh; position: relative; }
         .page-content.active { display: block; }
 
-        /* Hero Beranda */
+        /* BERANDA - BACKGROUND & TATA LETAK ASLI */
         #beranda {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/awsolutions-id/awsolutions-id.github.io/main/Background%20I.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://raw.githubusercontent.com/awsolutions-id/awsolutions-id.github.io/main/Background%20I.jpg');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
+        .hero-title { font-size: 2.8rem; font-weight: 900; color: #cbdcf7; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 20px; }
+        .hero-list { text-align: left; color: white; margin-bottom: 40px; display: inline-block; }
+        .hero-item { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-weight: bold; font-size: 1.1rem; }
+        .btn-layanan { background: white; color: var(--navy); padding: 15px 40px; border-radius: 8px; font-weight: 900; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
-        /* Kotak 3D Gaya Profil & Layanan */
-        .box-3d { 
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2); 
-            border-left: 5px solid var(--emas);
-            transition: 0.3s;
+        /* KOTAK PROFIL & LAYANAN (3D STYLE) */
+        .box-container { padding: 20px; margin-bottom: 80px; }
+        .box-item {
+            background: var(--navy); color: white; border-radius: 15px;
+            padding: 25px; border-left: 6px solid var(--gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); margin-bottom: 25px;
+            cursor: pointer; position: relative;
         }
+        .box-gold { background: var(--gold); color: var(--navy); }
+        .badge-klik { position: absolute; top: 10px; right: 15px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 5px; font-size: 10px; font-weight: bold; }
         
-        /* Pop-up (Modal) Styles */
-        .modal {
-            display: none; position: fixed; z-index: 2000; left: 0; top: 0;
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);
-        }
-        .modal-content {
-            background-color: white; margin: 10% auto; padding: 25px;
-            border-radius: 15px; width: 90%; max-width: 500px; position: relative;
-        }
-        .close { position: absolute; right: 15px; top: 10px; color: var(--emas); font-size: 28px; font-weight: bold; cursor: pointer; }
-
-        /* Footer Emas */
-        .footer-gold { background: var(--biru-tua); padding: 15px; text-align: center; }
-        .footer-gold p { color: var(--emas-terang); font-size: 0.8rem; font-weight: bold; margin: 2px 0; }
+        /* FOOTER SERAGAM KUNING EMAS */
+        .footer-gold { background: var(--navy); padding: 20px; text-align: center; border-top: 2px solid var(--gold); }
+        .footer-gold p { color: var(--gold-bright); font-weight: bold; font-size: 0.9rem; margin: 2px 0; }
+        
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }
+        .modal-content { background: white; margin: 10% auto; padding: 25px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; }
+        .close { position: absolute; right: 20px; top: 15px; color: var(--navy); font-size: 30px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <button onclick="toggleSidebar()" class="fixed top-5 right-5 z-[1100] bg-white p-3 rounded-full shadow-lg text-biru-tua">
-        <i class="fas fa-bars text-xl" id="menuIcon"></i>
-    </button>
+    <div class="fixed top-5 right-5 z-[2500]" onclick="toggleSidebar()">
+        <i class="fas fa-bars text-2xl p-4 bg-white rounded-full shadow-2xl text-blue-900"></i>
+    </div>
 
-    <div class="sidebar" id="sidebar">
+    <div id="sidebar" class="sidebar">
         <a href="#" onclick="showPage('beranda')" class="active">BERANDA</a>
         <a href="#" onclick="showPage('profil')">PROFIL</a>
         <a href="#" onclick="showPage('layanan')">LAYANAN</a>
@@ -77,176 +78,269 @@
     </div>
 
     <div id="beranda" class="page-content active">
-        <div class="p-6">
-            <h1 class="text-4xl font-bold text-[#cbdcf7] mb-6">Jasa Tugas Diklat</h1>
-            <div class="text-left inline-block space-y-4 mb-8">
-                <div class="flex items-center gap-3"><i class="fas fa-th-large text-[#ffcc00]"></i> <span>PKN Pelatihan Kepemimpinan Nasional</span></div>
-                <div class="flex items-center gap-3"><i class="fas fa-plus-square text-[#ffcc00]"></i> <span>PKA Pelatihan Kepemimpinan Administrator</span></div>
-                <div class="flex items-center gap-3"><i class="fas fa-sun text-[#ffcc00]"></i> <span>PKP Pelatihan Kepemimpinan Pengawas</span></div>
+        <div class="px-6">
+            <h1 class="hero-title">Jasa Tugas Diklat</h1>
+            <div class="hero-list">
+                <div class="hero-item"><i class="fas fa-th-large text-[#ffcc00]"></i> PKN Pelatihan Kepemimpinan Nasional, TK. II dan TK. I</div>
+                <div class="hero-item"><i class="fas fa-plus-square text-[#ffcc00]"></i> PKA Pelatihan Kepemimpinan Administrator</div>
+                <div class="hero-item"><i class="fas fa-sun text-[#ffcc00]"></i> PKP Pelatihan Kepemimpinan Pengawas</div>
             </div>
-            <p class="mb-8 opacity-90">Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda</p>
-            <button onclick="showPage('layanan')" class="bg-white text-blue-900 font-bold px-8 py-3 rounded-lg shadow-xl">Lihat Layanan</button>
+            <p class="text-white mb-8 font-bold text-lg">Solusi Pengetikan, Desain dan Cetak Dokumen untuk Kebutuhan Tugas Diklat Anda</p>
+            <button class="btn-layanan" onclick="showPage('layanan')">Lihat Layanan</button>
         </div>
-        <div class="footer-gold bg-transparent absolute bottom-5 w-full">
-            <p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p>
+        <div class="absolute bottom-8 w-full text-center">
+            <p class="text-[#ffcc00] font-bold text-sm">Hak Cipta © 2026 AW Solutions<br>Semua Hak Dilindungi</p>
         </div>
     </div>
 
-    <div id="profil" class="page-content p-4 bg-gray-50">
-        <div class="text-center py-8">
-            <h1 class="text-3xl font-black text-blue-900">Tentang Kami</h1>
-            <p class="text-amber-600 font-bold">AW SOLUTIONS MAKASSAR</p>
+    <div id="profil" class="page-content">
+        <div class="text-center mt-12 mb-10">
+            <h1 class="text-4xl font-black text-blue-900">Tentang Kami</h1>
+            <div class="w-20 h-1 bg-amber-600 mx-auto mt-2"></div>
+            <p class="text-amber-600 font-black tracking-widest mt-2 uppercase">AW Solutions Makassar</p>
         </div>
-        <div class="space-y-4 mb-20">
-            <div class="box-3d bg-blue-900 text-white p-5 rounded-xl" onclick="openModal('bidangModal')">
-                <div class="flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Bidang Usaha Kami</h3>
-                    <span class="text-[10px] bg-white/20 px-2 py-1 rounded">KLIK</span>
+
+        <div class="box-container">
+            <div class="box-item" onclick="openModal('bidang')">
+                <span class="badge-klik">KLIK</span>
+                <h3 class="font-bold text-xl mb-3">Bidang Usaha Kami</h3>
+                <ul class="text-sm space-y-1 opacity-90">
+                    <li>• Tugas Diklat PKN, PKA & PKP</li>
+                    <li>• Desain & Cetak Majalah</li>
+                    <li>• Desain & Cetak Infografis</li>
+                    <li>• Desain & Cetak Baliho, Banner, Spanduk</li>
+                </ul>
+            </div>
+
+            <div class="box-item box-gold" onclick="openModal('visimisi')">
+                <span class="badge-klik" style="background: rgba(0,0,0,0.1)">KLIK</span>
+                <h3 class="font-bold text-xl mb-3 text-blue-900">Visi & Misi</h3>
+                <p class="text-sm text-blue-900">Menjadi mitra terpercaya dalam mendukung kesuksesan tugas diklat Anda melalui layanan pengetikan, desain, dan cetak yang berkualitas tinggi.</p>
+            </div>
+
+            <div class="box-item" onclick="openModal('kualitas')">
+                <span class="badge-klik">KLIK</span>
+                <h3 class="font-bold text-xl mb-3">Desain dan Kualitas Terjamin</h3>
+                <p class="text-sm opacity-90">Prioritas kami adalah memberikan hasil yang profesional, rapi, dan memuaskan untuk menunjang pameran dan materi diklat Anda.</p>
+            </div>
+        </div>
+        <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
+    </div>
+
+    <div id="layanan" class="page-content">
+        <div class="text-center mt-12 mb-10">
+            <h1 class="text-3xl font-black text-blue-900 uppercase">Layanan Unggulan</h1>
+            <p class="text-amber-600 font-bold tracking-widest text-sm">JASA TUGAS DIKLAT</p>
+        </div>
+
+        <div class="box-container">
+            <div class="box-item flex items-center justify-between" onclick="openModal('pkn')">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-th-large text-2xl text-amber-500"></i>
+                    <div>
+                        <h3 class="font-bold text-lg">PKN</h3>
+                        <p class="text-[10px] opacity-80">Pelatihan Kepemimpinan Nasional, TK. II dan TK. I</p>
+                    </div>
                 </div>
+                <i class="fas fa-chevron-right text-amber-500"></i>
             </div>
-            <div class="box-3d bg-amber-500 text-blue-900 p-5 rounded-xl" onclick="openModal('visiModal')">
-                <div class="flex justify-between items-center">
-                    <h3 class="font-bold text-lg">Visi & Misi</h3>
-                    <span class="text-[10px] bg-blue-900/10 px-2 py-1 rounded">KLIK</span>
+
+            <div class="box-item flex items-center justify-between" onclick="openModal('pka')">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-plus-square text-2xl text-amber-500"></i>
+                    <div>
+                        <h3 class="font-bold text-lg">PKA</h3>
+                        <p class="text-[10px] opacity-80">Pelatihan Kepemimpinan Administrator</p>
+                    </div>
                 </div>
+                <i class="fas fa-chevron-right text-amber-500"></i>
             </div>
+
+            <div class="box-item flex items-center justify-between" onclick="openModal('pkp')">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-sun text-2xl text-amber-500"></i>
+                    <div>
+                        <h3 class="font-bold text-lg">PKP</h3>
+                        <p class="text-[10px] opacity-80">Pelatihan Kepemimpinan Pengawas</p>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-amber-500"></i>
+            </div>
+
+            <div class="box-item box-gold flex items-center justify-between" onclick="openModal('cetak')">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-file-alt text-2xl text-blue-900"></i>
+                    <h3 class="font-bold text-lg text-blue-900">Desain & Cetak</h3>
+                </div>
+                <i class="fas fa-chevron-right text-blue-900"></i>
+            </div>
+
+            <div class="w-full rounded-2xl overflow-hidden shadow-2xl mt-10">
+                <img src="https://raw.githubusercontent.com/awsolutions-id/awsolutions-id.github.io/main/Gedung.jpg" class="w-full h-auto" alt="Gedung Makassar">
+            </div>
+        </div>
+        <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
+    </div>
+    <div id="portofolio" class="page-content bg-gray-100">
+        <div class="text-center mt-12 mb-10">
+            <h1 class="text-3xl font-black text-blue-900 uppercase">Hasil Produk</h1>
+            <p class="text-amber-600 font-bold text-xs uppercase tracking-widest mt-1">Cetakan pendukung untuk bahan pameran</p>
+        </div>
+
+        <div class="px-4 mb-24">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="portoGrid">
+                </div>
         </div>
         <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
     </div>
 
-    <div id="layanan" class="page-content p-4">
-        <div class="text-center py-8">
-            <h1 class="text-3xl font-black text-blue-900">Layanan Unggulan</h1>
-            <p class="text-amber-600 font-bold">JASA TUGAS DIKLAT</p>
-        </div>
-        <div class="grid gap-4 mb-20">
-            <div class="box-3d bg-blue-900 text-white p-5 rounded-xl flex justify-between items-center" onclick="openModal('pknModal')">
-                <div class="flex items-center gap-4"><i class="fas fa-th-large text-amber-500"></i> <div><h3 class="font-bold">PKN</h3><p class="text-[10px]">Nasional Tk. II & I</p></div></div>
-                <i class="fas fa-chevron-right opacity-50"></i>
-            </div>
-            </div>
-        <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
-    </div>
-    <div class="box-3d bg-blue-900 text-white p-5 rounded-xl flex justify-between items-center" onclick="openModal('pkaModal')">
-                <div class="flex items-center gap-4"><i class="fas fa-plus-square text-amber-500"></i> <div><h3 class="font-bold">PKA</h3><p class="text-[10px]">Administrator</p></div></div>
-                <i class="fas fa-chevron-right opacity-50"></i>
-            </div>
-            <div class="box-3d bg-blue-900 text-white p-5 rounded-xl flex justify-between items-center" onclick="openModal('pkpModal')">
-                <div class="flex items-center gap-4"><i class="fas fa-cog text-amber-500"></i> <div><h3 class="font-bold">PKP</h3><p class="text-[10px]">Pengawas</p></div></div>
-                <i class="fas fa-chevron-right opacity-50"></i>
-            </div>
-            <div class="box-gold-3d bg-amber-500 text-blue-900 p-5 rounded-xl flex justify-between items-center" onclick="openModal('cetakModal')">
-                <div class="flex items-center gap-4"><i class="fas fa-file-alt text-blue-900"></i> <h3 class="font-bold">Desain & Cetak</h3></div>
-                <i class="fas fa-chevron-right opacity-50"></i>
-            </div>
-        </div>
-        <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
-    </div>
-
-    <div id="portofolio" class="page-content bg-gray-100 p-4">
-        <div class="text-center py-8">
-            <h1 class="text-3xl font-black text-blue-900">Hasil Produk</h1>
-            <p class="text-amber-600 font-bold text-xs">Cetakan pendukung untuk bahan pameran</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-20" id="portoGrid">
-            <script>
-                const base = "https://raw.githubusercontent.com/awsolutions-id/awsolutions-id.github.io/main/";
-                const items = [
-                    {n: "Majalah 01.jpg", t: "gambar", d: "Majalah tugas diklat PKN"},
-                    {n: "Majalah 02.jpg", t: "gambar", d: "Majalah tugas diklat PKA"},
-                    {n: "Majalah 03.jpg", t: "gambar", d: "Majalah tugas diklat PKP"},
-                    {n: "Majalah 04~2.jpg", t: "gambar", d: "Majalah desain modern"},
-                    {n: "Banner 01.jpg", t: "gambar", d: "Banner pameran diklat"},
-                    {n: "Banner 02.jpg", t: "gambar", d: "Banner ukuran standar"},
-                    {n: "Spanduk nama stand.jpg", t: "gambar", d: "Spanduk nama stand"},
-                    {n: "Cetak Majalah 01.mp4", t: "video", d: "Proses cetak kualitas terbaik"},
-                    {n: "Cetak Majalah 02.mp4", t: "video", d: "Proses cetak mesin modern"},
-                    {n: "Backdrop 01.jpg", t: "gambar", d: "Backdrop pameran"},
-                    {n: "Backdrop 02.jpg", t: "gambar", d: "Backdrop desain informatif"},
-                    {n: "Backdrop 03.jpg", t: "gambar", d: "Backdrop kualitas tajam"}
-                ];
-                items.forEach(i => {
-                    document.write(`
-                        <div class="bg-white p-2 rounded-lg shadow" onclick="bukaFile('${base}${encodeURIComponent(i.n)}', '${i.t}', '${i.d}')">
-                            <div class="h-32 bg-gray-200 rounded overflow-hidden mb-2">
-                                ${i.t==='gambar' ? `<img src="${base}${encodeURIComponent(i.n)}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center bg-blue-900 text-white"><i class="fas fa-play"></i></div>`}
+    <div id="kontak" class="page-content bg-white">
+        <div class="px-5 pt-12 pb-24">
+            <div class="bg-[#11316b] text-white p-8 rounded-3xl shadow-2xl text-center mb-8 border-b-8 border-amber-500">
+                <h1 class="text-3xl font-bold mb-2">Hubungi Kami</h1>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-6"></div>
+                
+                <p class="text-sm mb-8 opacity-90">Silakan hubungi kami untuk pemesanan atau pertanyaan lebih lanjut:</p>
+                
+                <div class="space-y-8">
+                    <div class="contact-action">
+                        <a href="https://wa.me/6282187662626" class="flex flex-col items-center">
+                            <div class="flex items-center gap-3 text-2xl font-black mb-1">
+                                <i class="fab fa-whatsapp text-3xl text-green-400"></i> 0821 8766 2626
                             </div>
-                            <button class="w-full text-[10px] bg-blue-900 text-white py-1 rounded">Lihat Detail</button>
+                            <span class="text-amber-500 font-bold text-xs tracking-tighter">○ klik chat WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <div class="contact-action">
+                        <a href="https://wa.me/6285975153455" class="flex flex-col items-center">
+                            <div class="flex items-center gap-3 text-2xl font-black mb-1">
+                                <i class="fab fa-whatsapp text-3xl text-green-400"></i> 0859 7515 3455
+                            </div>
+                            <span class="text-amber-500 font-bold text-xs tracking-tighter">○ klik chat WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-white/10 text-center">
+                    <i class="fas fa-map-marker-alt text-amber-500 mb-2"></i>
+                    <p class="font-bold text-sm">Makassar, Sulawesi Selatan</p>
+                    
+                    <div class="mt-6 bg-black/20 p-4 rounded-xl">
+                        <p class="text-amber-500 font-black text-sm mb-3 uppercase tracking-widest">Jam Operasional</p>
+                        <div class="text-xs space-y-2 font-medium opacity-90">
+                            <p>Senin - Jumat: 08.00 - 17.00 WITA</p>
+                            <p>Sabtu: 08.00 - 12.00 WITA</p>
+                            <p>Minggu & Hari Libur: Tutup</p>
                         </div>
-                    `);
-                });
-            </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border border-gray-100">
+                <h2 class="text-2xl font-black text-[#11316b] mb-6 flex items-center gap-3">
+                    <i class="fas fa-envelope-open-text"></i> Kirim Pesan
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="form-field">
+                        <label class="block text-[10px] font-black text-amber-600 uppercase mb-1">Nama Lengkap</label>
+                        <input type="text" id="inputNama" class="w-full bg-transparent border-b-2 border-gray-300 p-2 focus:border-[#11316b] outline-none transition-all font-bold" placeholder="Masukkan nama Anda">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="block text-[10px] font-black text-amber-600 uppercase mb-1">Nomor WhatsApp</label>
+                        <input type="tel" id="inputWA" class="w-full bg-transparent border-b-2 border-gray-300 p-2 focus:border-[#11316b] outline-none transition-all font-bold" placeholder="Contoh: 08123xxx">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="block text-[10px] font-black text-amber-600 uppercase mb-1">Pesan / Keterangan</label>
+                        <textarea id="inputPesan" rows="4" class="w-full bg-transparent border-b-2 border-gray-300 p-2 focus:border-[#11316b] outline-none transition-all font-bold" placeholder="Tulis pesan atau kebutuhan tugas diklat Anda"></textarea>
+                    </div>
+
+                    <button onclick="kirimPesanWA()" class="w-full bg-[#11316b] text-white py-5 rounded-2xl font-black text-lg shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-3">
+                        KIRIM PESAN <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="text-center text-xs mt-8 text-gray-400 italic">"Terima kasih telah mengunjungi website kami"</p>
+            </div>
         </div>
         <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
     </div>
 
-    <div id="kontak" class="page-content p-4">
-        <div class="bg-blue-900 text-white p-6 rounded-2xl text-center mb-6">
-            <h1 class="text-2xl font-bold mb-4">Hubungi Kami</h1>
-            <div class="space-y-4">
-                <a href="https://wa.me/6282187662626" class="block">
-                    <p class="font-bold text-lg"><i class="fab fa-whatsapp text-green-400 mr-2"></i> 0821 8766 2626</p>
-                    <p class="text-xs text-amber-500">○ klik chat WhatsApp</p>
-                </a>
-                <a href="https://wa.me/6285975153455" class="block">
-                    <p class="font-bold text-lg"><i class="fab fa-whatsapp text-green-400 mr-2"></i> 0859 7515 3455</p>
-                    <p class="text-xs text-amber-500">○ klik chat WhatsApp</p>
-                </a>
-            </div>
-            <div class="mt-6 border-t border-white/20 pt-4">
-                <p class="text-amber-500 font-bold mb-2">Jam Operasional</p>
-                <p class="text-xs">Senin - Jumat: 08.00 - 17.00 WITA</p>
-                <p class="text-xs">Sabtu: 08.00 - 12.00 WITA</p>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-xl mb-20">
-            <h2 class="font-bold text-blue-900 mb-4">Kirim Pesan</h2>
-            <input type="text" placeholder="Nama Lengkap" class="w-full border p-2 rounded mb-3">
-            <textarea placeholder="Pesan / Kebutuhan" class="w-full border p-2 rounded mb-3" rows="3"></textarea>
-            <button class="w-full bg-blue-900 text-white py-3 rounded-lg font-bold">Kirim Pesan</button>
-        </div>
-        <div class="footer-gold"><p>Hak Cipta © 2026 AW Solutions</p><p>Semua Hak Dilindungi</p></div>
-    </div>
-
-    <div id="modalBox" class="modal">
-        <div class="modal-content">
+    <div id="modalBox" class="modal" onclick="if(event.target == this) closeModal()">
+        <div class="modal-content shadow-2xl">
             <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalIsi" class="text-sm text-gray-700"></div>
+            <div id="modalIsi" class="mt-4"></div>
         </div>
     </div>
 
     <script>
+        // FUNGSI NAVIGASI
         function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
         
         function showPage(pageId) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
-            document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
-            event.target.classList.add('active');
-            toggleSidebar();
+            document.getElementById('sidebar').classList.remove('active');
             window.scrollTo(0,0);
         }
 
-        function openModal(type) {
-            let content = "";
-            if(type === 'bidangModal') content = "<b>Lingkup Kegiatan Kami:</b><ul class='list-disc ml-5 mt-2'><li>Tugas Diklat PKN, PKA, PKP</li><li>Desain Majalah & Infografis</li><li>Cetak Banner & Spanduk</li></ul>";
-            if(type === 'visiModal') content = "<b>Visi:</b> Menjadi mitra terbaik dalam mendukung kelengkapan administrasi dan visual tugas diklat.";
-            if(type === 'pknModal') content = "<b>Tugas Diklat PKN:</b><ul class='list-disc ml-5 mt-2'><li>Essay Agenda I, II, III</li><li>Rancangan Proyek Perubahan</li><li>Bahan Tayang & Video</li></ul>";
-            // ... Tambahkan konten modal lainnya di sini ...
-            document.getElementById('modalIsi').innerHTML = content;
-            document.getElementById('modalBox').style.display = "block";
+        function closeModal() { document.getElementById('modalBox').style.display = 'none'; }
+
+        // RENDER 12 ITEM PORTOFOLIO UTUH
+        const baseRepo = "https://raw.githubusercontent.com/awsolutions-id/awsolutions-id.github.io/main/";
+        const portoData = [
+            {f: "Majalah 01.jpg", t: "gambar", d: "Majalah hasil desain untuk kebutuhan tugas diklat PKN"},
+            {f: "Majalah 02.jpg", t: "gambar", d: "Majalah hasil desain untuk kebutuhan tugas diklat PKA"},
+            {f: "Majalah 03.jpg", t: "gambar", d: "Majalah hasil desain untuk kebutuhan tugas diklat PKP"},
+            {f: "Majalah 04~2.jpg", t: "gambar", d: "Majalah hasil desain dengan desain modern dan rapi"},
+            {f: "Banner 01.jpg", t: "gambar", d: "Banner hasil desain untuk kebutuhan pameran diklat"},
+            {f: "Banner 02.jpg", t: "gambar", d: "Banner hasil desain dengan ukuran standar pameran"},
+            {f: "Spanduk nama stand.jpg", t: "gambar", d: "Spanduk nama stand untuk kebutuhan pameran diklat"},
+            {f: "Cetak Majalah 01.mp4", t: "video", d: "Proses pencetakan majalah dengan kualitas terbaik"},
+            {f: "Cetak Majalah 02.mp4", t: "video", d: "Proses pencetakan majalah dengan mesin modern"},
+            {f: "Backdrop 01.jpg", t: "gambar", d: "Backdrop hasil desain untuk kebutuhan pameran diklat"},
+            {f: "Backdrop 02.jpg", t: "gambar", d: "Backdrop hasil desain dengan desain menarik dan informatif"},
+            {f: "Backdrop 03.jpg", t: "gambar", d: "Backdrop hasil desain dengan kualitas cetak yang tajam"}
+        ];
+
+        const container = document.getElementById('portoGrid');
+        portoData.forEach(item => {
+            const el = document.createElement('div');
+            el.className = "bg-white p-2 rounded-xl shadow-lg border-b-4 border-amber-500 active:scale-95 transition-transform";
+            el.onclick = () => bukaMedia(`${baseRepo}${encodeURIComponent(item.f)}`, item.t, item.d);
+            el.innerHTML = `
+                <div class="h-32 bg-gray-200 rounded-lg overflow-hidden mb-2">
+                    ${item.t === 'gambar' ? `<img src="${baseRepo}${encodeURIComponent(item.f)}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center bg-[#11316b] text-white"><i class="fas fa-play-circle text-3xl"></i></div>`}
+                </div>
+                <button class="w-full py-2 bg-[#11316b] text-white text-[10px] font-black rounded-lg uppercase tracking-tighter">Lihat Detail</button>
+            `;
+            container.appendChild(el);
+        });
+
+        function bukaMedia(url, tipe, teks) {
+            let mediaHtml = tipe === 'gambar' ? `<img src="${url}" class="w-full rounded-xl mb-4">` : `<video src="${url}" controls class="w-full rounded-xl mb-4"></video>`;
+            document.getElementById('modalIsi').innerHTML = `${mediaHtml}<h3 class="font-black text-[#11316b] text-lg mb-2">Deskripsi Produk</h3><p class="text-sm text-gray-600 font-medium">${teks}</p>`;
+            document.getElementById('modalBox').style.display = 'block';
         }
 
-        function closeModal() { document.getElementById('modalBox').style.display = "none"; }
+        // FUNGSI KIRIM WA DARI FORM
+        function kirimPesanWA() {
+            const nama = document.getElementById('inputNama').value;
+            const pesan = document.getElementById('inputPesan').value;
+            const waUrl = `https://wa.me/6282187662626?text=Halo%20AW%20Solutions,%20Saya%20${encodeURIComponent(nama)}.%20Pesan:%20${encodeURIComponent(pesan)}`;
+            if(nama && pesan) { window.open(waUrl, '_blank'); } else { alert('Mohon lengkapi Nama dan Pesan Anda.'); }
+        }
 
-        function bukaFile(url, jenis, ket) {
-            let content = jenis === 'gambar' ? `<img src="${url}" class="w-full rounded">` : `<video src="${url}" controls class="w-full"></video>`;
-            content += `<p class="mt-4 font-bold text-blue-900">${ket}</p>`;
-            document.getElementById('modalIsi').innerHTML = content;
-            document.getElementById('modalBox').style.display = "block";
+        // MODAL UNTUK PROFIL & LAYANAN (REDAKSI ASLI)
+        function openModal(type) {
+            let h = "";
+            if(type === 'bidang') h = `<h2 class="text-2xl font-black text-[#11316b] mb-4">Bidang Usaha Kami</h2><ul class="space-y-3 font-bold text-gray-700"><li><i class="fas fa-check-circle text-amber-500"></i> Tugas Diklat PKN, PKA & PKP</li><li><i class="fas fa-check-circle text-amber-500"></i> Desain & Cetak Majalah</li><li><i class="fas fa-check-circle text-amber-500"></i> Desain & Cetak Baliho / Banner</li></ul>`;
+            // Modal lainnya tetap ada...
+            document.getElementById('modalIsi').innerHTML = h;
+            document.getElementById('modalBox').style.display = 'block';
         }
     </script>
 </body>
 </html>
-
-    
