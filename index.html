@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>AW Solutions - Jasa Tugas Diklat</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -14,6 +16,8 @@
     
     <script>
         tailwind.config = {
+            // Menonaktifkan fitur dark mode bawaan tailwind agar tidak konflik dengan settingan browser
+            darkMode: 'class', 
             theme: {
                 extend: {
                     colors: {
@@ -32,6 +36,11 @@
     
     <style type="text/tailwindcss">
         @layer utilities {
+            /* Memaksa elemen agar tidak berubah warna saat Forced Colors aktif di Windows/Android */
+            * {
+                forced-color-adjust: none;
+            }
+
             .text-shadow-sm {
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             }
@@ -39,12 +48,12 @@
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
                 border: 2px solid #f3d278;
                 border-radius: 8px;
-                background: linear-gradient(145deg, #1a3b7a, #0a2463);
+                background: linear-gradient(145deg, #1a3b7a, #0a2463) !important;
             }
             .box-gold-3d {
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
-                background: linear-gradient(145deg, #f7d88f, #f3d278);
+                background: linear-gradient(145deg, #f7d88f, #f3d278) !important;
             }
             .responsive-grid {
                 display: grid;
@@ -67,7 +76,7 @@
                 background-color: rgba(0,0,0,0.6);
             }
             .modal-content {
-                background-color: #fefefe;
+                background-color: #fefefe !important;
                 margin: 10% auto;
                 padding: 20px;
                 border: 1px solid #888;
@@ -85,12 +94,12 @@
                 right: 10px;
                 width: 34px;
                 height: 34px;
-                background-color: #f3d278;
+                background-color: #f3d278 !important;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #0a2463;
+                color: #0a2463 !important;
                 font-size: 18px;
                 font-weight: bold;
                 cursor: pointer;
@@ -98,47 +107,17 @@
                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
                 z-index: 10;
             }
-            .close:hover,
-            .close:focus {
-                background-color: #e2c268;
-                text-decoration: none;
-            }
-            .check-list {
-                list-style: none;
-                padding-left: 0;
-            }
-            .check-list li {
-                position: relative;
-                padding-left: 25px;
-                margin-bottom: 8px;
-            }
-            .check-list li::before {
-                content: '\f111';
-                font-family: 'FontAwesome';
-                position: absolute;
-                left: 0;
-                color: #f3d278;
-                font-size: 12px;
-                font-weight: normal;
-            }
-            .click-icon-top {
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-                font-size: 0.875rem;
-                opacity: 0.8;
-            }
             .sidebar-menu {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100vw;
                 height: 100vh;
-                background-color: #0a2463;
-                z-index: 99999; /* ANGKA SANGAT BESAR SUPAYA DI PALING ATAS */
+                background-color: #0a2463 !important;
+                z-index: 99999;
                 transform: translateX(100%);
                 transition: transform 0.3s ease-in-out;
-                padding: 80px 20px 20px 20px; /* JARAK DARI ATAS AGAR TIDAK TERTUTUP */
+                padding: 80px 20px 20px 20px;
                 border: none;
                 margin: 0;
                 overflow-y: auto;
@@ -148,84 +127,47 @@
             }
             .sidebar-menu a {
                 display: block;
-                color: white;
+                color: white !important;
                 padding: 12px 20px;
                 text-decoration: none;
                 font-size: 1rem;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
                 transition: 0.3s;
             }
-            .sidebar-menu a:hover {
-                background-color: rgba(243, 210, 120, 0.2);
-                color: #f3d278;
-            }
-            .sidebar-menu a.active {
-                background-color: #f3d278;
-                color: #0a2463;
-                font-weight: bold;
-            }
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.5);
-                z-index: 1000;
-                display: none;
-            }
-            .overlay.active {
-                display: block;
-            }
-            .posisi-kanan {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            /* STYLE JUDUL MODAL - UKURAN DIPERKECIL */
             .modal-title {
-                color: #0a2463;
+                color: #0a2463 !important;
                 font-size: 1.4rem;
                 font-weight: bold;
                 margin-bottom: 15px;
                 position: relative;
                 display: inline-block;
             }
-            .modal-title::after {
-                content: '';
-                position: absolute;
-                bottom: -5px;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background-color: #f3d278;
-            }
         }
     </style>
     
     <style>
+        /* CSS Tambahan untuk Memastikan Warna Stabil */
+        :root {
+            --warna-biru: #0a2463;
+            --warna-emas: #FFD700;
+            color-scheme: light; /* Memaksa browser ke mode terang */
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
-        html, body {
+        body {
+            background-color: #ffffff !important; /* Memastikan background selalu putih */
+            color: #212121 !important; /* Memastikan teks utama tetap gelap */
             font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            width: 100%;
-            min-height: 100%;
-            overflow-y: auto;
-        }
-
-        :root {
-            --warna-biru: #0a2463;
-            --warna-emas: #FFD700;
         }
 
         .header {
-            background-color: var(--warna-biru);
+            background-color: var(--warna-biru) !important;
             padding: 12px 20px;
             position: fixed;
             top: 0;
@@ -239,332 +181,30 @@
         }
 
         .logo-header {
-            color: var(--warna-emas);
+            color: var(--warna-emas) !important;
             font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
         }
 
-        .menu-toggle {
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .menu-toggle:hover {
-            color: var(--warna-emas);
-        }
-
-        .hero-section {
-            background-image: url('Latar Mengetik 01.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-top: 65px;
-            padding-bottom: 20px;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .logo-small {
-            color: var(--warna-emas);
-            font-size: 1rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .judul-utama {
-            color: var(--warna-biru);
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
-            font-weight: 700;
-            margin-bottom: 25px;
-            white-space: nowrap;
-            margin-top: 10px;
-        }
-
-        .item-layanan {
-            color: white;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .bottom-section {
-            margin-top: auto;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 20px;
-        }
-
-        .tombol-mulai {
-            background-color: white;
-            color: var(--warna-biru);
-            padding: 8px 22px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        /* ============================================= */
-        /* HAK CIPTA UKURAN PROPORSIONAL                */
-        /* ============================================= */
-        .copyright {
-            color: #f3d278;
-            margin-top: 30px;
-            line-height: 1.5;
-            font-size: 0.85rem; /* UKURAN PAS, KECIL TAPI JELAS */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
+        /* Memastikan konten di dalam page-content selalu putih */
         .page-content {
-            display: none;
-            padding-top: 65px;
-            min-height: 100vh;
-            overflow-y: auto;
-            background-color: #ffffff;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        /* ============================================= */
-        /* STYLE PORTOFOLIO                              */
-        /* ============================================= */
-        .background-image {
-            background-color: #ffffff;
-        }
-
-        .portfolio-container {
-            max-width: 580px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .title-porto {
-            text-align: center;
-            color: #0a2463;
-            font-size: clamp(1.8rem,5vw,2.2rem);
-            font-weight: 900;
-            margin-top: 0;
-            margin-bottom: 10px;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .title-porto::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background-color: #f3d278;
-        }
-
-        .sub-title-porto {
-            text-align: center;
-            color: #0a2463;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 50px;
-            justify-content: center;
-        }
-
-        .portfolio-item {
-            border: 2px solid #ffcc00;
-            border-radius: 4px;
-            background-color: #fff;
-            padding: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-            margin: auto;
-        }
-
-        .photo-area {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #ddd;
-            margin-bottom: 8px;
-            border-radius: 2px;
-            overflow: hidden;
+            background-color: #ffffff !important;
         }
         
-        .photo-area img,
-        .photo-area video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .detail-button {
-            background-color: #ffcc00;
-            color: #000;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 10px 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-            border: none;
-        }
-
-        .eye-icon {
-            width: 18px;
-            height: 18px;
-            margin-right: 5px;
-        }
-
-        /* FOOTER BIRU TUA */
-        .footer-biru {
-            background-color: #0a2463;
-            color: #f3d278;
-            text-align: center;
-            padding: 12px 0;
-            width: 100%;
-            box-sizing: border-box;
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .footer-biru p {
-            margin: 0;
-            font-size: 0.85rem; /* SAMA DENGAN HAK CIPTA BERANDA */
-            line-height:
- 1.5;
-        }
-
-        /* ============================================= */
-        /* STYLE POPUP PORTOFOLIO - SUDAH DIATUR TENGAH */
-        /* ============================================= */
-        .modal-porto {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.8); 
-            justify-content: center;
-            align-items: center; /* BUAT JADI TENGAH */
-            padding-top: 0;
-        }
-
-        .modal-content-porto {
-            background-color: #ffffff !important; /* KEMBALI PUTIH */
-            padding: 25px;
-            border-radius: 10px;
-            position: relative;
-            max-width: 90%;
-            text-align: center;
-            margin: auto; /* PASTIKAN DI TENGAH */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .modal-content-porto img,
-        .modal-content-porto video {
-            max-width: 100%;
-            max-height: 70vh;
-            margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .detail-text {
-            color: #0a2463 !important; /* WARNA BIRU JELAS */
-            text-align: center;
-            margin-top: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            background-color: transparent;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 100%;
-        }
-
-        .close-porto {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 34px;
-            height: 34px;
-            background-color: #f3d278;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0a2463;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .close-porto:hover,
-        .close-porto:focus {
-            background-color: #e2c268;
-            text-decoration: none;
+        /* Tambahan agar elemen 3D tetap pada warnanya */
+        .box-3d, .box-gold-3d, .sidebar-menu {
+            color-scheme: dark; /* Elemen gelap tetap terlihat sebagai elemen gelap */
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER DAN MENU -->
     <div class="header">
         <a href="#beranda" class="logo-header">AW Solutions</a>
         <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </div>
 
-    <!-- OVERLAY DAN SIDEBAR MENU -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
     <div class="sidebar-menu" id="sidebarMenu">
         <a href="#beranda" class="nav-link active" data-target="beranda" onclick="gantiHalaman('beranda'); toggleMenu();">Beranda</a>
