@@ -2,258 +2,358 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AW Solutions - Jasa Tugas Diklat & Percetakan Profesional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW Solutions - Hubungi Kami</title>
+    <style>
+        /* --- RESET & BASIC STYLES --- */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f8f9; /* Background halaman abu-abu sangat muda */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center; /* Meratakan konten ke tengah secara horizontal */
+        }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#11316b',
-                        gold: '#d4a257',
-                    }
-                }
+        /* Container utama untuk membatasi lebar agar terlihat seperti tampilan mobile */
+        .main-container {
+            width: 100%;
+            max-width: 480px; /* Lebar maksimal layaknya handphone */
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: #001f5b; /* Biru tua pekat */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #f8c43a; /* Garis kuning bawah */
+        }
+
+        .logo-text {
+            color: #f8c43a; /* Teks logo kuning */
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .menu-icon {
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- MAIN CONTENT AREA --- */
+        .content {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Judul Utama */
+        h1.page-title {
+            color: #001f5b; /* Biru tua */
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        /* Garis bawah kuning setelah judul */
+        .title-underline {
+            width: 70px;
+            height: 3px;
+            background-color: #f8c43a;
+            margin-bottom: 25px;
+        }
+
+        /* --- INFO BOX (KOTAK BIRU) --- */
+        .info-box {
+            background-color: #001f5b;
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .info-box-text {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Item Kontak (WA, Lokasi) */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        /* Ikon-ikon kecil */
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Warna spesifik untuk teks "klik chat WhatsApp" */
+        .sub-text-gold {
+            color: #f8c43a; 
+            font-size: 0.8rem;
+            display: block;
+            margin-left: 32px; /* Sejajar dengan teks nomor */
+            margin-top: -3px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Separator horisontal tipis di dalam kotak biru */
+        .info-separator {
+            border: 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 20px 0;
+        }
+
+        /* Judul Jam Operasional */
+        .ops-title {
+            color: #f8c43a;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .ops-details {
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* --- FORM BOX (KOTAK PUTIH) --- */
+        .form-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .form-title {
+            color: #001f5b;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Grouping label dan input */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            color: #001f5b;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        /* Styling Input Field & Textarea */
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Sangat penting agar padding tidak merusak lebar */
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        /* Menghilangkan outline default biru saat fokus */
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #f8c43a; /* Ganti dengan border kuning saat aktif */
+        }
+
+        /* placeholder text */
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: #aaa;
+        }
+
+        /* Styling khusus Textarea agar tinggi */
+        .form-textarea {
+            height: 120px;
+            resize: vertical; /* User bisa tarik tinggi tapi tidak lebar */
+        }
+
+        /* --- BUTTON (AKTIF) --- */
+        .submit-btn {
+            background-color: #001f5b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 15px 20px;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Jarak antara teks dan ikon pesawat */
+            transition: background-color 0.2s; /* Animasi halus saat hover */
+        }
+
+        /* Efek hover untuk tombol */
+        .submit-btn:hover {
+            background-color: #00153d; /* Sedikit lebih gelap saat diarahkan mouse */
+        }
+
+        /* Teks penutup (quote) */
+        .closing-text {
+            color: #888;
+            font-style: italic;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #001f5b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin-top: auto; /* Mendorong footer ke paling bawah jika konten sedikit */
+        }
+
+        /* Ikon-ikon SVG yang disematkan langsung (sehingga tidak perlu file gambar eksternal) */
+        .icon-wa { fill: #25D366; } /* Warna hijau WA */
+        .icon-hand { fill: #f8c43a; } /* Warna kuning */
+        .icon-pin { fill: #f8c43a; } /* Warna kuning */
+        .icon-paperplane { fill: white; }
+
+        /* Media Query: Menyesuaikan tampilan jika diakses dari desktop besar */
+        @media (min-width: 481px) {
+            body {
+                padding-top: 20px;
+                padding-bottom: 20px;
             }
         }
-    </script>
 
-    <style>
-        :root { color-scheme: light; }
-        body { 
-            background-color: #ffffff !important; 
-            color: #333333 !important; 
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        .page-content { display: none; min-height: 100vh; padding-bottom: 120px; }
-        .page-content.active { display: block; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .box-3d {
-            background: linear-gradient(145deg, #1a3b7a, #0a2463) !important;
-            border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            border: 1px solid rgba(212, 162, 87, 0.3);
-        }
-
-        .bottom-nav {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: #11316b; display: flex; justify-content: space-around;
-            padding: 15px 0; z-index: 1000; border-top: 3px solid #d4a257;
-        }
-        .nav-item { color: white; text-align: center; font-size: 10px; cursor: pointer; opacity: 0.5; }
-        .nav-item.active { opacity: 1; color: #d4a257; font-weight: bold; }
-
-        /* MODAL STYLES */
-        .modal {
-            display: none; position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #fff; margin: 15% auto; padding: 25px;
-            border-radius: 25px; width: 85%; max-width: 500px;
-            animation: slideUp 0.3s ease-out; position: relative;
-        }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        
-        .list-tugas-pop li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: 13px; color: #444; line-height: 1.4; text-align: left; font-weight: 500; }
-        .list-tugas-pop li::before { content: "\f058"; font-family: FontAwesome; position: absolute; left: 0; color: #d4a257; font-size: 18px; }
     </style>
 </head>
 <body>
 
-    <div class="bg-primary text-white p-4 text-center font-black sticky top-0 z-[500] shadow-md border-b border-gold/30 tracking-widest uppercase">
-        AW SOLUTIONS
-    </div>
+    <div class="main-container">
 
-    <div id="home" class="page-content active">
-        <div class="h-[60vh] relative flex flex-col items-center justify-center text-center px-8 text-white overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" 
-                 class="absolute inset-0 w-full h-full object-cover scale-110" alt="Background Laptop">
-            <div class="absolute inset-0 bg-primary/75"></div> <div class="relative z-10">
-                <h1 class="text-4xl font-black text-gold mb-2 tracking-tighter uppercase drop-shadow-lg">AW SOLUTIONS</h1>
-                <p class="text-sm italic font-semibold opacity-90 mb-8 drop-shadow">"Solusi Profesional Tugas Diklat & Administrasi"</p>
+        <header>
+            <div class="logo-text">AW Solutions</div>
+            <div class="menu-icon">&#9776;</div>
+        </header>
+
+        <main class="content">
+
+            <h1 class="page-title">Hubungi Kami</h1>
+            <div class="title-underline"></div>
+
+            <div class="info-box">
+                <p class="info-box-text">Silakan hubungi kami untuk pemesanan atau pertanyaan lebih lanjut:</p>
                 
-                <button onclick="gantiHalaman('layanan', 2)" 
-                        class="bg-white text-primary px-12 py-4 rounded-xl font-black shadow-2xl active:scale-95 transition uppercase text-sm tracking-widest border-2 border-white">
-                    Lihat Layanan
-                </button>
-            </div>
-        </div>
-
-        <div class="p-8 space-y-6">
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded-2xl text-center border border-gray-100 shadow-sm">
-                    <i class="fa fa-clock-o text-2xl text-gold mb-2"></i>
-                    <p class="text-[10px] font-black uppercase text-primary">Tepat Waktu</p>
+                <div class="contact-item">
+                    <svg class="contact-icon icon-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.222-3.815c1.517.901 3.13 1.377 4.776 1.378 5.485.001 9.95-4.466 9.952-9.953.001-2.659-1.036-5.158-2.92-7.043-1.884-1.884-4.382-2.921-7.04-2.922-5.485 0-9.952 4.467-9.955 9.954-.001 1.611.39 3.184 1.134 4.582l-.841 3.07 3.133-.822zm11.233-12.016c.3-.3.8-.3 1.1 0l2.3 2.3c.3.3.3.8 0 1.1l-1.6 1.6-3.4-3.4 1.6-1.6zm-1.6 1.6l3.4 3.4-6.3 6.3c-.3.3-.8.3-1.1 0l-2.3-2.3c-.3-.3-.3-.8 0-1.1l6.3-6.3zm-10.9 9.8c.2.2.2.5 0 .7l-1.5 1.5-.7-.7 1.5-1.5c.2-.2.5-.2.7 0zm11.9-10.9l-2.1-2.1"/></svg>
+                    <strong>0821 8766 2626</strong>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-2xl text-center border border-gray-100 shadow-sm">
-                    <i class="fa fa-check-circle text-2xl text-gold mb-2"></i>
-                    <p class="text-[10px] font-black uppercase text-primary">Kualitas ASN</p>
+                <div class="sub-text-gold">
+                    <svg style="width:12px; height:12px; fill:#f8c43a; vertical-align:middle; margin-right:5px;" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14v1h-10.016l1.716 2.016-.7.7-2.91-3.424 2.91-3.424.7.7-1.716 2.016h10.016v1z"/></svg>
+                    klik chat WhatsApp
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div id="profil" class="page-content bg-white">
-        <div class="p-8 text-center">
-            <h2 class="text-3xl font-black text-primary mb-2 uppercase">Profil Kami</h2>
-            <div class="w-16 h-1 bg-gold mx-auto mb-6"></div>
-            <p class="text-gray-700 leading-relaxed mb-8">
-                <strong>AW Solutions</strong> adalah mitra profesional di Makassar yang membantu peserta <strong>Diklat Kepemimpinan</strong>.
-            </p>
-            <div class="bg-gray-100 p-6 rounded-2xl border-l-4 border-gold text-left">
-                <p class="text-[10px] uppercase opacity-60 font-black mb-1">Admin Koordinator:</p>
-                <p class="font-bold text-xl tracking-widest uppercase text-primary">Admin</p>
-            </div>
-        </div>
-    </div>
+                <div class="contact-item">
+                    <svg class="contact-icon icon-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.222-3.815c1.517.901 3.13 1.377 4.776 1.378 5.485.001 9.95-4.466 9.952-9.953.001-2.659-1.036-5.158-2.92-7.043-1.884-1.884-4.382-2.921-7.04-2.922-5.485 0-9.952 4.467-9.955 9.954-.001 1.611.39 3.184 1.134 4.582l-.841 3.07 3.133-.822zm11.233-12.016c.3-.3.8-.3 1.1 0l2.3 2.3c.3.3.3.8 0 1.1l-1.6 1.6-3.4-3.4 1.6-1.6zm-1.6 1.6l3.4 3.4-6.3 6.3c-.3.3-.8.3-1.1 0l-2.3-2.3c-.3-.3-.3-.8 0-1.1l6.3-6.3zm-10.9 9.8c.2.2.2.5 0 .7l-1.5 1.5-.7-.7 1.5-1.5c.2-.2.5-.2.7 0zm11.9-10.9l-2.1-2.1"/></svg>
+                    <strong>0859 7515 3455</strong>
+                </div>
+                <div class="sub-text-gold">
+                    <svg style="width:12px; height:12px; fill:#f8c43a; vertical-align:middle; margin-right:5px;" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 14v1h-10.016l1.716 2.016-.7.7-2.91-3.424 2.91-3.424.7.7-1.716 2.016h10.016v1z"/></svg>
+                    klik chat WhatsApp
+                </div>
 
-    <div id="layanan" class="page-content bg-gray-50">
-        <div class="py-10 px-6">
-            <h2 class="text-3xl font-black text-primary text-center mb-8 uppercase">Layanan Kami</h2>
-            
-            <div class="space-y-4">
-                <div onclick="openModal('pkn')" class="box-3d p-7 text-white cursor-pointer active:scale-95 transition">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-3xl font-bold text-gold uppercase">PKN</h3>
-                            <p class="text-[14px] opacity-100 font-medium">Pelatihan Kepemimpinan Nasional <span class="block font-black text-gold mt-1 underline tracking-widest uppercase">Tingkat I & II</span></p>
-                        </div>
-                        <i class="fa fa-chevron-right text-gold text-xl"></i>
+                <div class="contact-item" style="margin-top: 20px;">
+                    <svg class="contact-icon icon-pin" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.193 3.372 9.023 7.811 15.176.107.149.278.222.463.222s.356-.073.463-.222c4.439-6.153 7.811-10.983 7.811-15.176 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                    <span><strong>Makassar, Sulawesi Selatan</strong></span>
+                </div>
+
+                <hr class="info-separator">
+
+                <div class="ops-title">Jam Operasional</div>
+                <p class="ops-details">
+                    Senin - Jumat: 08.00 - 17.00 WITA<br>
+                    Sabtu: 08.00 - 12.00 WITA<br>
+                    Minggu & Hari Libur: Tutup
+                </p>
+            </div>
+
+            <div class="form-box">
+                <h2 class="form-title">Kirim Pesan</h2>
+                
+                <form action="" method="post" id="contactForm">
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="nama_lengkap">Nama Lengkap</label>
+                        <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-input" placeholder="Masukkan nama Anda" required>
                     </div>
-                </div>
 
-                <div onclick="openModal('pka')" class="box-3d p-7 text-white cursor-pointer active:scale-95 transition">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-3xl font-bold text-gold uppercase">PKA</h3>
-                            <p class="text-[14px] opacity-100 font-medium">Pelatihan Kepemimpinan Administrator</p>
-                        </div>
-                        <i class="fa fa-chevron-right text-gold text-xl"></i>
+                    <div class="form-group">
+                        <label class="form-label" for="nomor_wa">Nomor WhatsApp</label>
+                        <input type="tel" id="nomor_wa" name="nomor_wa" class="form-input" placeholder="Masukkan nomor WhatsApp" pattern="[0-9]*" inputmode="numeric" required>
                     </div>
-                </div>
 
-                <div onclick="openModal('pkp')" class="box-3d p-7 text-white cursor-pointer active:scale-95 transition">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <h3 class="text-3xl font-bold text-gold uppercase">PKP</h3>
-                            <p class="text-[14px] opacity-100 font-medium">Pelatihan Kepemimpinan Pengawas</p>
-                        </div>
-                        <i class="fa fa-chevron-right text-gold text-xl"></i>
+                    <div class="form-group">
+                        <label class="form-label" for="pesan">Pesan / Keterangan</label>
+                        <textarea id="pesan" name="pesan" class="form-textarea" placeholder="Tulis pesan atau kebutuhan tugas diklat Anda" required></textarea>
                     </div>
-                </div>
 
-                <div class="bg-gold p-7 rounded-2xl text-primary shadow-lg">
-                    <div class="flex justify-between items-center mb-3">
-                        <h3 class="text-2xl font-black uppercase italic">DESAIN & CETAK</h3>
-                        <i class="fa fa-print text-3xl"></i>
-                    </div>
-                    <p class="text-[14px] font-bold opacity-90 italic mb-4 border-t border-primary/20 pt-2">Majalah, Banner, X-Banner & Atribut Dokumentasi</p>
-                    <ul class="space-y-2 font-black text-xs uppercase">
-                        <li><i class="fa fa-check-circle"></i> Cetak Majalah Full Color</li>
-                        <li><i class="fa fa-check-circle"></i> Banner & X-Banner Proper</li>
-                        <li><i class="fa fa-check-circle"></i> Atribut Pameran Lengkap</li>
-                    </ul>
-                </div>
+                    <button type="submit" class="submit-btn">
+                        Kirim Pesan
+                        <svg class="icon-paperplane" style="width:18px; height:18px;" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                    </button>
+                </form>
+
+                <p class="closing-text">"Terima kasih telah mengunjungi website kami"</p>
             </div>
-        </div>
+
+        </main>
+
+        <footer>
+            Hak Cipta © 2026 AW Solutions<br>
+            Semua Hak Dilindungi
+        </footer>
+
     </div>
 
-    <div id="porto" class="page-content bg-white">
-        <div class="p-6">
-            <h2 class="text-3xl font-black text-primary text-center mb-8 uppercase">Portofolio</h2>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="border rounded-xl overflow-hidden shadow-sm"><img src="m1.jpg" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x500?text=Majalah+PKN'"><p class="p-2 text-[10px] font-bold text-center uppercase">Majalah PKN</p></div>
-                <div class="border rounded-xl overflow-hidden shadow-sm"><img src="b1.jpg" class="w-full h-40 object-cover" onerror="this.src='https://placehold.co/400x500?text=Banner+Aksi'"><p class="p-2 text-[10px] font-bold text-center uppercase">Banner Aksi</p></div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 3</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 4</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 5</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 6</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 7</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 8</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 9</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 10</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 11</div>
-                <div class="border rounded-xl bg-gray-50 flex items-center justify-center h-40 text-[9px] text-gray-400 font-bold uppercase">Produk 12</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="kontak" class="page-content bg-primary flex flex-col items-center justify-center text-center px-10">
-        <h2 class="text-3xl font-black text-gold mb-10 uppercase">HUBUNGI KAMI</h2>
-        <div class="w-full max-w-xs space-y-4 mb-10">
-            <a href="https://wa.me/6282187662626" class="bg-[#25D366] text-white py-4 px-6 rounded-2xl flex items-center justify-center gap-3 font-black shadow-lg">
-                <i class="fa fa-whatsapp text-2xl"></i> WA ADMIN 1
-            </a>
-            <a href="https://wa.me/6285975153455" class="bg-[#25D366] text-white py-4 px-6 rounded-2xl flex items-center justify-center gap-3 font-black shadow-lg">
-                <i class="fa fa-whatsapp text-2xl"></i> WA ADMIN 2
-            </a>
-        </div>
-    </div>
-
-    <div id="modalTugas" class="modal">
-        <div class="modal-content">
-            <span onclick="closeModal()" class="absolute top-4 right-5 text-2xl font-bold text-gray-400 cursor-pointer">&times;</span>
-            <div id="modalHeader" class="mb-6">
-                <span id="badgeTugas" class="bg-primary text-gold px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">DIKLAT</span>
-                <h3 class="text-xl font-black text-primary mt-3 uppercase tracking-tight">Daftar Pengerjaan Tugas</h3>
-            </div>
-            <ul id="listTugas" class="list-tugas-pop"></ul>
-            <button onclick="closeModal()" class="w-full mt-6 bg-gray-100 py-3 rounded-xl font-bold text-gray-500 text-sm active:scale-95 transition">Tutup</button>
-        </div>
-    </div>
-
-    <div class="bottom-nav">
-        <div class="nav-item active" onclick="gantiHalaman('home', 0)"><i class="fa fa-home text-2xl"></i><p>Home</p></div>
-        <div class="nav-item" onclick="gantiHalaman('profil', 1)"><i class="fa fa-user-circle text-2xl"></i><p>Profil</p></div>
-        <div class="nav-item" onclick="gantiHalaman('layanan', 2)"><i class="fa fa-briefcase text-2xl"></i><p>Layanan</p></div>
-        <div class="nav-item" onclick="gantiHalaman('porto', 3)"><i class="fa fa-image text-2xl"></i><p>Porto</p></div>
-        <div class="nav-item" onclick="gantiHalaman('kontak', 4)"><i class="fa fa-phone text-2xl"></i><p>Kontak</p></div>
-    </div>
-
-    <script>
-        const dataTugas = {
-            pkn: {
-                badge: "PKN Tingkat I & II",
-                list: ["Essay Agenda I, Agenda II, Agenda III", "Tugas Individu Agenda I, II, III", "Tugas Individu Observasi Lapangan (OL)", "Rancangan Proyek Perubahan", "Laporan Implementasi Proyek Perubahan", "Desain Infografis & Majalah Proper", "Bahan Tayang Seminar Proper", "Desain Spanduk/Banner Pameran", "Video Presentasi"]
-            },
-            pka: {
-                badge: "PKA & PKP",
-                list: ["Essay Agenda I, Agenda II, Agenda III", "Tugas Individu Agenda I, II, III", "Tugas Individu Studi Lapangan (Stula)", "Rancangan Aksi Perubahan", "Laporan Implementasi Aksi Perubahan", "Desain Infografis & Majalah Akper", "Bahan Tayang Seminar Akper", "Desain Spanduk/Banner Pameran", "Video Presentasi"]
-            },
-            pkp: {
-                badge: "PKA & PKP",
-                list: ["Essay Agenda I, Agenda II, Agenda III", "Tugas Individu Agenda I, II, III", "Tugas Individu Studi Lapangan (Stula)", "Rancangan Aksi Perubahan", "Laporan Implementasi Aksi Perubahan", "Desain Infografis & Majalah Akper"]
-            }
-        };
-
-        function openModal(tipe) {
-            const modal = document.getElementById('modalTugas');
-            document.getElementById('badgeTugas').innerText = dataTugas[tipe].badge;
-            document.getElementById('listTugas').innerHTML = dataTugas[tipe].list.map(tugas => `<li>${tugas}</li>`).join('');
-            modal.style.display = "block";
-        }
-
-        function closeModal() { document.getElementById('modalTugas').style.display = "none"; }
-
-        function gantiHalaman(id, index) {
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.querySelectorAll('.nav-item')[index].classList.add('active');
-            window.scrollTo(0,0);
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('modalTugas')) closeModal();
-        }
-    </script>
 </body>
 </html>
